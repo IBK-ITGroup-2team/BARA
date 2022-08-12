@@ -51,12 +51,24 @@ document.add_paragraph(' 1. 당행 개인고객용 모바일 앱 (i-one bank) �
 document.add_paragraph('   ㅇ 워드클라우드로 나타낸 당행 모바일 앱 사용자 반응')
 document.add_paragraph('     ㄱ. 긍정적 반응')
 document.add_picture('WordCloudEx.PNG', width=Cm(16), height=Cm(8))  #추후에 실제 워드클라우드 이미지로 변경할 것.
+document.add_paragraph('   ㅇ 빈출 단어 Top3')
+#임시 문자열 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+document.add_paragraph('        1. 1순위 단어')
+document.add_paragraph('        2. 2순위 단어')
+document.add_paragraph('        3. 3순위 단어')
+
 document.add_paragraph('     ㄴ. 부정적 반응')
 document.add_picture('WordCloudEx.PNG', width=Cm(16), height=Cm(8))  #추후에 실제 워드클라우드 이미지로 변경할 것.
+#임시 문자열 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+document.add_paragraph('   ㅇ 빈출 단어 Top3')
+#임시 문자열 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+document.add_paragraph('        1. 1순위 단어')
+document.add_paragraph('        2. 2순위 단어')
+document.add_paragraph('        3. 3순위 단어')
+
 document.add_paragraph('')
 
 #빈출 단어 도출
-document.add_paragraph('   ㅇ 빈출 단어 Top3')
 
 # 추후 워드 클라우드 코드와 연결
 '''
@@ -72,6 +84,7 @@ for i in banks:
     document.add_paragraph('   ㅇ 워드클라우드로 나타낸 '+i+'은행 모바일 앱 사용자 반응')
     document.add_paragraph('     ㄱ. 긍정적 반응')
     document.add_picture(i+'WordCloudP.PNG', width=Cm(16), height=Cm(8))  #추후에 실제 워드클라우드 이미지로 변경할 것.
+    document.add_paragraph('   ㅇ 빈출 단어 Top3')
     document.add_paragraph('     ㄴ. 부정적 반응')
     document.add_picture(i+'WordCloudN.PNG',width=Cm(16), height=Cm(8))  #추후 변경
     document.add_paragraph('   ㅇ 빈출 단어 Top3')    
@@ -109,9 +122,9 @@ for i in banks:
     
 # 임시 변수 !!!!!!!!!!!!!!!!!!!!!! 나중에 지우기
 bestWord2='기업 이미지 개선'    
-resultPersonal=document.add_paragraph('')    
-resultPersonal.add_run('결 론           ').bold=True
-resultPersonal.add_run(bestWord2+'에 힘쓰는 것이 좋겠다고 판단됨.')
+resultEnterprise=document.add_paragraph('')    
+resultEnterprise.add_run('결 론           ').bold=True
+resultEnterprise.add_run(bestWord2+'에 힘쓰는 것이 좋겠다고 판단됨.')
     
 # 인터넷 전문 은행 앱 리뷰 현황
 document.add_paragraph(' 5. 인터넷 전문 은행 모바일 앱 사용자 반응 분석')
@@ -124,6 +137,11 @@ for i in internetBanks:
     document.add_picture(i+'WordCloudN.PNG',width=Cm(16), height=Cm(8))  #추후 변경
     document.add_paragraph('   ㅇ 빈출 단어 Top3') 
 
+# 임시 변수!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+bestWordInternet='부가 서비스'
+resultInternet=document.add_paragraph('')
+resultInternet.add_run('결 론           ').bold=True
+resultInternet.add_run(bestWordInternet+'에 힘쓰는 것이 좋겠다고 판단됨.')
 
 #마지막 꼬릿말
 document.add_paragraph('\"새로운 60년, 고객을 향한 혁신\"')
