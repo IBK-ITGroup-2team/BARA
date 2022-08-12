@@ -63,6 +63,7 @@ for i in range(3):
     document.add_paragraph(i'. 'array[i])
 '''
 document.add_paragraph('')
+
 # 2번 타행 개인 앱 리뷰 현황
 document.add_paragraph(' 2. 타행 개인고객용 모바일 앱 사용자 반응 분석')
 for i in banks:
@@ -71,7 +72,46 @@ for i in banks:
     document.add_paragraph('     ㄱ. 긍정적 반응')
     document.add_picture(i+'WordCloudP.PNG', width=Cm(16), height=Cm(8))  #추후에 실제 워드클라우드 이미지로 변경할 것.
     document.add_paragraph('     ㄴ. 부정적 반응')
-    document.add_paragraph(i+'WordCloudN.PNG',width=Cm(16), height=Cm(8))  #추후 변경
+    document.add_picture(i+'WordCloudN.PNG',width=Cm(16), height=Cm(8))  #추후 변경
+    document.add_paragraph('   ㅇ 빈출 단어 Top3')    
+    # 추후 워드 클라우드 코드와 연결
+    '''
+    for i in range(3):
+        document.add_paragraph(i'. 'array[i])
+    '''
+    
+# 임시 변수 !!!!!!!!!!!!!!!!!!!!!! 나중에 지우기
+bestWord='UI 개선'    
+resultPersonal=document.add_paragraph('')    
+resultPersonal.add_run('결 론           ').bold=True
+resultPersonal.add_run(bestWord+'에 힘쓰는 것이 좋겠다고 판단됨.')
+    
+# 당행 기업 앱 리뷰 현황
+document.add_paragraph(' 1. 당행 기업고객용 모바일 앱 (i-one bank) 사용자 반응 분석')
+document.add_paragraph('   ㅇ 워드클라우드로 나타낸 당행 모바일 앱 사용자 반응')
+document.add_paragraph('     ㄱ. 긍정적 반응')
+document.add_picture('WordCloudEx.PNG', width=Cm(16), height=Cm(8))  #추후에 실제 워드클라우드 이미지로 변경할 것.
+document.add_paragraph('     ㄴ. 부정적 반응')
+document.add_picture('WordCloudEx.PNG', width=Cm(16), height=Cm(8))  #추후에 실제 워드클라우드 이미지로 변경할 것.
+document.add_paragraph('')
+
+# 타행 기업 앱 리뷰 현황
+document.add_paragraph(' 2. 타행 기업고객용 모바일 앱 사용자 반응 분석')
+for i in banks:
+    document.add_paragraph(i+"은행")
+    document.add_paragraph('   ㅇ 워드클라우드로 나타낸 '+i+'은행 모바일 앱 사용자 반응')
+    document.add_paragraph('     ㄱ. 긍정적 반응')
+    document.add_picture(i+'EWordCloudP.PNG', width=Cm(16), height=Cm(8))  #추후에 실제 워드클라우드 이미지로 변경할 것.
+    document.add_paragraph('     ㄴ. 부정적 반응')
+    document.add_picture(i+'EWordCloudN.PNG',width=Cm(16), height=Cm(8))  #추후 변경
+    document.add_paragraph('   ㅇ 빈출 단어 Top3') 
+    
+# 임시 변수 !!!!!!!!!!!!!!!!!!!!!! 나중에 지우기
+bestWord2='기업 이미지 개선'    
+resultPersonal=document.add_paragraph('')    
+resultPersonal.add_run('결 론           ').bold=True
+resultPersonal.add_run(bestWord2+'에 힘쓰는 것이 좋겠다고 판단됨.')
+    
 
 #마지막 꼬릿말
 document.add_paragraph('\"새로운 60년, 고객을 향한 혁신\"')
@@ -82,6 +122,7 @@ paragraph1.alignment=WD_ALIGN_PARAGRAPH.CENTER
 
 paragraph2=document.paragraphs[1]
 paragraph2.alignment=WD_ALIGN_PARAGRAPH.RIGHT
+
 
 paragraphLast=document.paragraphs[-1]
 #paragraphLast.font.size=Document.shared.Pt(20)
