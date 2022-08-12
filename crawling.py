@@ -1,22 +1,17 @@
 # -*- coding: utf-8 -*-
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from bs4 import BeautifulSoup
-import time
-from time import sleep
 import random
-import pandas as pd
+import time
 
-import nltk
-from nltk.corpus import stopwords
+import pandas as pd
+from bs4 import BeautifulSoup
 from nltk.tokenize import word_tokenize
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 
 chrome_driver = "chromedriver.exe"
-URL = 'https://play.google.com/store/apps/details?id=com.wooribank.smart.biz'
+URL = 'https://play.google.com/store/apps/details?id=com.shinhan.sbizbank'
 
 def scroll(modal):
     try:
@@ -91,10 +86,14 @@ review_num = 0
 #불용어 처리 리뷰 데이터만 저장
 result = []
 #불용어
-stop_words = ". .. ... .... ..... ...... ....... .............. ( ) > ! !! !!! , ,, ,,, ? ; ;; ~ ~~ ~~~ " \
-             "기껏 다시 후 위해 것 너무 쓰레기 이젠 매일 또 그냥 저 이 다들 이것 저것 ㅎ ㅎㅎ ㅋ ㅋㅋ ㅡ ㅡㅡ 진짜 자주 만 등 다 의 은 는 이 가 에 더 에서 에서만 합니다 한다 한다고 " \
-             "요 도 아주 자꾸 우와 드디어 와 완전 대박 거 더 이고 잘 - 넘 참 보다 중"
-stop_words = stop_words.split(' ')
+stop_words = []
+#불용어 처리 함수
+def define_stopwords(path):
+    f = open(path, "r", encoding="UTF-8")
+    data = f.read().splitlines()
+
+    for word in data:
+        stop_words.append(word)
 
 # 리뷰 1개씩 접근해 정보 추출
 for review in review_source:
@@ -140,8 +139,12 @@ for review in review_source:
 
         word_tokens = word_tokenize(content)
 
+        #불용어 텍스트파일 경로 설정
+        define_stopwords("C:/Users/Cyber/Desktop/BARA/BARA/stopwords/stopwords-ko.txt")
+
         for w in word_tokens:
-            if w not in stop_words:
+            #한글자는 의미 없어서 제외 처리
+            if w not in stop_words and len(w) > 1:
                 result.append(w)
 
 # 크롤링한 리뷰 csv 파일로 저장
