@@ -17,6 +17,7 @@ banks=['하나','우리','신한','국민','농협']
 internetBanks=['카카오뱅크','케이뱅크','토스']
 
 document.add_heading('\"고객과 함께, 신뢰와 책임, 열정과 혁신, 소통과 팀웍\"', level = 1) 
+document.add_paragraph('')
 dateToday=datetime.today()
 document.add_paragraph(datetime.today().strftime("%Y. %m. %d"))  #해당 날짜
 
@@ -37,7 +38,9 @@ document.add_paragraph('당행의 모바일 앱에 대한 사용자들의 반응
 
 document.add_paragraph('')
 
-document.add_paragraph('□ 주요 내용 목차')
+index=document.add_paragraph('')
+index.add_run('□ 주요 내용 목차').bold=True
+
 document.add_paragraph(' 1. 당행 개인고객용 모바일 앱 (i-one bank) 사용자 반응 분석')
 document.add_paragraph(' 2. 타행 개인고객용 모바일 앱 사용자 반응 비교 분석')
 document.add_paragraph(' 3. 당행 기업고객용 모바일 앱 (i-one bank) 사용자 반응 분석')
@@ -45,17 +48,18 @@ document.add_paragraph(' 4. 타행 기업고객용 모바일 앱 사용자 반�
 document.add_paragraph(' 5. 인터넷 전문 은행 모바일 앱 사용자 반응 비교 분석')
 document.add_paragraph('')
 
-for i in range(9):
+for i in range(7):
     document.add_paragraph('')  # 다음 장으로 이동
 
-document.add_paragraph('□ 주요 내용')
+main=document.add_paragraph('')
+main.add_run('□ 주요 내용').bold=True
 
 # 1번 당행 개인 앱 리뷰 현황
 document.add_paragraph(' 1. 당행 개인고객용 모바일 앱 (i-one bank) 사용자 반응 분석')
 document.add_paragraph('   ㅇ 워드클라우드로 나타낸 당행 모바일 앱 사용자 반응')
 document.add_paragraph('     ㄱ. 긍정적 반응')
-document.add_picture('WordCloudEx.PNG', width=Cm(16), height=Cm(8))  #추후에 실제 워드클라우드 이미지로 변경할 것.
-document.add_paragraph('   ㅇ 빈출 단어 Top3')
+document.add_picture('WordCloudEx.PNG', width=Cm(16), height=Cm(6))  #추후에 실제 워드클라우드 이미지로 변경할 것.
+document.add_paragraph('     - 빈출 단어 Top3')
 #임시 문자열 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 document.add_paragraph('        1. 1순위 단어')
 document.add_paragraph('        2. 2순위 단어')
@@ -154,7 +158,7 @@ document.add_paragraph('\"새로운 60년, 고객을 향한 혁신\"')
 paragraph1=document.paragraphs[0]   #첫번째 문단
 paragraph1.alignment=WD_ALIGN_PARAGRAPH.CENTER
 
-paragraph2=document.paragraphs[1]
+paragraph2=document.paragraphs[2]
 paragraph2.alignment=WD_ALIGN_PARAGRAPH.RIGHT
 
 
