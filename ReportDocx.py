@@ -21,13 +21,17 @@ dateToday=datetime.today()
 document.add_paragraph(datetime.today().strftime("%Y. %m. %d"))  #해당 날짜
 
 send=document.add_paragraph('')
-send.add_run('수 신     ').bold=True
+send.add_run('수 신             ').bold=True
 send.add_run('모바일 앱 개발 이해 관련 부서').bold=True
-document.add_heading('제 목  『IBK 모바일 앱 사용자 반응 비교』', level=2)
+
+title=document.add_paragraph('')
+title.add_run('제 목           『'+datetime.today().strftime("%Y년 %m월")+'IBK 모바일 앱 사용자 반응 비교』').bold=True
+
+document.add_paragraph('')
 document.add_paragraph('')
 
-objective=document.add_paragraph('□ 발간 목적')
-objective.bold=True
+objective=document.add_paragraph('')
+objective.add_run('□ 발간 목적').bold=True
 #objective.add_run('당행의 모바일 앱에 대한 사용자들의 반응을 이해관계자에 효과적으로 전달하고, 타행과의 비교를 통해 개선점을 찾고자 함').bold=True
 document.add_paragraph('당행의 모바일 앱에 대한 사용자들의 반응을 이해관계자에 효과적으로 전달하고, 타행과의 비교를 통해 개선점을 찾고자 함')
 
