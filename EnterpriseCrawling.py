@@ -63,8 +63,8 @@ def main():
     all_review_button_xpath = '/html/body/c-wiz[2]/div/div/div[1]/div[2]/div/div[1]/c-wiz[4]/section/div/div/div[5]/div/div/button/span'
     button_loading_wait = wait.until(EC.element_to_be_clickable((By.XPATH, all_review_button_xpath)))
     # '리뷰 모두 보기' 버튼 클릭
-    # driver.find_element_by_xpath(all_review_button_xpath).click()
-    driver.find_element(By.XPATH, all_review_button_xpath).click()  # 위에건 안되서 이렇게 수정함
+    driver.find_element_by_xpath(all_review_button_xpath).click()
+    # driver.find_element(By.XPATH, all_review_button_xpath).click()  # 위에건 안되서 이렇게 수정함(셀레니움 버전차이)
 
     # '리뷰 모두 보기' 페이지 렌더링 대기
     all_review_page_xpath = '/html/body/div[4]/div[2]/div/div/div/div/div[2]'
@@ -158,13 +158,13 @@ def main():
 
     # 크롤링한 리뷰 csv 파일로 저장
     df = pd.DataFrame(dataset)
-    df.to_csv('./dataset/WOORIbank_enterprise_review_dataset.csv', encoding='utf-8-sig')
+    df.to_csv('./reviews/기업고객/WOORIbank_enterprise_review_dataset.csv', encoding='utf-8-sig')
 
     # 저장한 리뷰 정보 불러오기
-    df = pd.read_csv('./dataset/WOORIbank_enterprise_review_dataset.csv', encoding='utf-8-sig')
+    df = pd.read_csv('./reviews/기업고객/WOORIbank_enterprise_review_dataset.csv', encoding='utf-8-sig')
     df = df.drop(['Unnamed: 0'], axis=1)  # 불필요한 칼럼 삭제
 
-
+# main()
 sched = BackgroundScheduler()
 sched.start()
 #매월 1일 오전 9시에 main 함수 실행
