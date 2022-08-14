@@ -307,33 +307,219 @@ WOORITableCells3[1].paragraphs[0].add_run('1\n')
 WOORITableCells3[1].paragraphs[0].add_run('2\n')
 WOORITableCells3[1].paragraphs[0].add_run('3\n')
 
-#####################################################################################저녁 먹고 옴
+document.add_paragraph('')
 
 # 임시 변수 !!!!!!!!!!!!!!!!!!!!!! 나중에 지우기
 bestWord='UI 개선'    
-resultPersonal=document.add_paragraph('')    
+resultPersonal=document.add_paragraph('best 은행: '+'\n')    
 resultPersonal.add_run('결 론           ').bold=True
 resultPersonal.add_run(bestWord+'에 힘쓰는 것이 좋겠다고 판단됨.')
     
 # 당행 기업 앱 리뷰 현황
 document.add_paragraph(' 3. 당행 기업고객용 모바일 앱 (i-one bank) 사용자 반응 분석')
-document.add_paragraph('   ㅇ 워드클라우드로 나타낸 당행 모바일 앱 사용자 반응')
-document.add_paragraph('     ㄱ. 긍정적 반응')
-document.add_picture('WordCloudEx.PNG', width=Cm(16), height=Cm(8))  #추후에 실제 워드클라우드 이미지로 변경할 것.
-document.add_paragraph('     ㄴ. 부정적 반응')
-document.add_picture('WordCloudEx.PNG', width=Cm(16), height=Cm(8))  #추후에 실제 워드클라우드 이미지로 변경할 것.
+
+IBKTableE = document.add_table(3,2,grid_t_style)
+
+IBKTableECells1=IBKTable.rows[0].cells
+IBKTableECells1[0].paragraphs[0].add_run('긍정적 반응').bold=True
+IBKTableECells1[0].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
+
+IBKTableECells1=IBKTable.rows[0].cells
+IBKTableECells1[1].paragraphs[0].add_run('부정적 반응').bold=True
+IBKTableECells1[1].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
+
+# 표에 워드클라우드 삽입
+IBKECell10=IBKTableE.cell(1,0)
+IBKEPara10=IBKECell10.add_paragraph()
+IBKERun10=IBKEPara10.add_run()
+IBKERun10.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+
+IBKECell11=IBKTableE.cell(1,1)
+IBKEPara11=IBKECell11.add_paragraph()
+IBKERun11=IBKEPara11.add_run()
+IBKERun11.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+
+# 긍정 빈출 단어 Top3
+IBKTableECells3=IBKTableE.rows[2].cells
+IBKTableECells3[0].paragraphs[0].add_run('빈출 단어 Top3\n')
+IBKTableECells3[0].paragraphs[0].add_run('1\n')
+IBKTableECells3[0].paragraphs[0].add_run('2\n')
+IBKTableECells3[0].paragraphs[0].add_run('3\n')
+
+# 부정 빈출 단어 Top3
+IBKTableECells3[1].paragraphs[0].add_run('빈출 단어 Top3\n')
+IBKTableECells3[1].paragraphs[0].add_run('1\n')
+IBKTableECells3[1].paragraphs[0].add_run('2\n')
+IBKTableECells3[1].paragraphs[0].add_run('3\n')
+
 document.add_paragraph('')
 
 # 타행 기업 앱 리뷰 현황
 document.add_paragraph(' 4. 타행 기업고객용 모바일 앱 사용자 반응 분석')
-for i in banks:
-    document.add_paragraph(i+"은행")
-    document.add_paragraph('   ㅇ 워드클라우드로 나타낸 '+i+'은행 모바일 앱 사용자 반응')
-    document.add_paragraph('     ㄱ. 긍정적 반응')
-    document.add_picture(i+'EWordCloudP.PNG', width=Cm(16), height=Cm(8))  #추후에 실제 워드클라우드 이미지로 변경할 것.
-    document.add_paragraph('     ㄴ. 부정적 반응')
-    document.add_picture(i+'EWordCloudN.PNG',width=Cm(16), height=Cm(8))  #추후 변경
-    document.add_paragraph('   ㅇ 빈출 단어 Top3') 
+
+document.add_paragraph('    ㅇ 하나은행')
+
+# 하나은행 표 생성
+HANA1TableE = document.add_table(3,2,grid_t_style)
+
+HANA1Cells1E=HANA1TableE.rows[0].cells
+HANA1Cells1E[0].paragraphs[0].add_run('긍정적 반응').bold=True
+HANA1Cells1E[0].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
+
+HANA1TableCells1E=HANA1TableE.rows[0].cells
+HANA1Cells1E[1].paragraphs[0].add_run('부정적 반응').bold=True
+HANA1TableCells1E[1].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
+
+# 표에 워드클라우드 삽입
+HANACell10E=HANA1TableE.cell(1,0)
+HANAPara10E=HANACell10E.add_paragraph()
+HANARun10E=HANAPara10E.add_run()
+HANARun10E.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+
+HANACell11E=HANA1TableE.cell(1,1)
+HANAPara11E=HANACell11E.add_paragraph()
+HANARun11E=HANAPara11E.add_run()
+HANARun11E.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+
+# 긍정 빈출 단어 Top3
+HANATableCells3E=HANA1TableE.rows[2].cells
+HANATableCells3E[0].paragraphs[0].add_run('빈출 단어 Top3\n')
+HANATableCells3E[0].paragraphs[0].add_run('1\n')
+HANATableCells3E[0].paragraphs[0].add_run('2\n')
+HANATableCells3E[0].paragraphs[0].add_run('3\n')
+
+# 부정 빈출 단어 Top3
+HANATableCells3E[1].paragraphs[0].add_run('빈출 단어 Top3\n')
+HANATableCells3E[1].paragraphs[0].add_run('1\n')
+HANATableCells3E[1].paragraphs[0].add_run('2\n')
+HANATableCells3E[1].paragraphs[0].add_run('3\n')
+    
+document.add_paragraph('')
+document.add_paragraph('')
+document.add_paragraph('')
+
+document.add_paragraph('    ㅇ 국민은행')
+
+# 국민은행 표 생성
+KB1TableE = document.add_table(3,2,grid_t_style)
+
+KB1Cells1E=KB1TableE.rows[0].cells
+KB1Cells1E[0].paragraphs[0].add_run('긍정적 반응').bold=True
+KB1Cells1E[0].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
+
+KB1TableCells1E=KB1TableE.rows[0].cells
+KB1Cells1E[1].paragraphs[0].add_run('부정적 반응').bold=True
+KB1TableCells1E[1].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
+
+# 표에 워드클라우드 삽입
+KBCell10E=KB1TableE.cell(1,0)
+KBPara10E=KBCell10E.add_paragraph()
+KBRun10E=KBPara10E.add_run()
+KBRun10E.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+
+KBCell11E=KB1TableE.cell(1,1)
+KBPara11E=KBCell11E.add_paragraph()
+KBRun11E=KBPara11E.add_run()
+KBRun11E.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+
+# 긍정 빈출 단어 Top3
+KBTableCells3E=KB1TableE.rows[2].cells
+KBTableCells3E[0].paragraphs[0].add_run('빈출 단어 Top3\n')
+KBTableCells3E[0].paragraphs[0].add_run('1\n')
+KBTableCells3E[0].paragraphs[0].add_run('2\n')
+KBTableCells3E[0].paragraphs[0].add_run('3\n')
+
+# 부정 빈출 단어 Top3
+KBTableCells3E[1].paragraphs[0].add_run('빈출 단어 Top3\n')
+KBTableCells3E[1].paragraphs[0].add_run('1\n')
+KBTableCells3E[1].paragraphs[0].add_run('2\n')
+KBTableCells3E[1].paragraphs[0].add_run('3\n')
+    
+document.add_paragraph('')
+document.add_paragraph('')
+
+# 신한 은행 기업 앱 리뷰 현황
+document.add_paragraph('    ㅇ 신한은행')
+
+# 신한은행 표 생성
+SH1TableE = document.add_table(3,2,grid_t_style)
+
+SH1Cells1E=SH1TableE.rows[0].cells
+SH1Cells1E[0].paragraphs[0].add_run('긍정적 반응').bold=True
+SH1Cells1E[0].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
+
+SH1TableCells1E=SH1TableE.rows[0].cells
+SH1Cells1E[1].paragraphs[0].add_run('부정적 반응').bold=True
+SH1TableCells1E[1].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
+
+# 표에 워드클라우드 삽입
+SHCell10E=SH1TableE.cell(1,0)
+SHPara10E=SHCell10E.add_paragraph()
+SHRun10E=SHPara10E.add_run()
+SHRun10E.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+
+SHCell11E=SH1TableE.cell(1,1)
+SHPara11E=SHCell11E.add_paragraph()
+SHRun11E=SHPara11E.add_run()
+SHRun11E.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+
+# 긍정 빈출 단어 Top3
+SHTableCells3E=SH1TableE.rows[2].cells
+SHTableCells3E[0].paragraphs[0].add_run('빈출 단어 Top3\n')
+SHTableCells3E[0].paragraphs[0].add_run('1\n')
+SHTableCells3E[0].paragraphs[0].add_run('2\n')
+SHTableCells3E[0].paragraphs[0].add_run('3\n')
+
+# 부정 빈출 단어 Top3
+SHTableCells3E[1].paragraphs[0].add_run('빈출 단어 Top3\n')
+SHTableCells3E[1].paragraphs[0].add_run('1\n')
+SHTableCells3E[1].paragraphs[0].add_run('2\n')
+SHTableCells3E[1].paragraphs[0].add_run('3\n')
+    
+document.add_paragraph('')
+document.add_paragraph('')
+document.add_paragraph('')
+
+#농협 은행 기업 고객 용 앱 리뷰 현황
+document.add_paragraph('    ㅇ 농협은행')
+
+# 농협은행 표 생성
+NH1TableE = document.add_table(3,2,grid_t_style)
+
+NH1Cells1E=NH1TableE.rows[0].cells
+NH1Cells1E[0].paragraphs[0].add_run('긍정적 반응').bold=True
+NH1Cells1E[0].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
+
+NH1TableCells1E=SH1TableE.rows[0].cells
+NH1Cells1E[1].paragraphs[0].add_run('부정적 반응').bold=True
+NH1TableCells1E[1].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
+
+# 표에 워드클라우드 삽입
+NHCell10E=NH1TableE.cell(1,0)
+NHPara10E=NHCell10E.add_paragraph()
+NHRun10E=NHPara10E.add_run()
+NHRun10E.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+
+NHCell11E=NH1TableE.cell(1,1)
+NHPara11E=NHCell11E.add_paragraph()
+NHRun11E=NHPara11E.add_run()
+NHRun11E.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+
+# 긍정 빈출 단어 Top3
+NHTableCells3E=NH1TableE.rows[2].cells
+NHTableCells3E[0].paragraphs[0].add_run('빈출 단어 Top3\n')
+NHTableCells3E[0].paragraphs[0].add_run('1\n')
+NHTableCells3E[0].paragraphs[0].add_run('2\n')
+NHTableCells3E[0].paragraphs[0].add_run('3\n')
+
+# 부정 빈출 단어 Top3
+NHTableCells3E[1].paragraphs[0].add_run('빈출 단어 Top3\n')
+NHTableCells3E[1].paragraphs[0].add_run('1\n')
+NHTableCells3E[1].paragraphs[0].add_run('2\n')
+NHTableCells3E[1].paragraphs[0].add_run('3\n')
+    
+document.add_paragraph('')
+document.add_paragraph('')
     
 # 임시 변수 !!!!!!!!!!!!!!!!!!!!!! 나중에 지우기
 bestWord2='기업 이미지 개선'    
@@ -342,15 +528,7 @@ resultEnterprise.add_run('결 론           ').bold=True
 resultEnterprise.add_run(bestWord2+'에 힘쓰는 것이 좋겠다고 판단됨.')
     
 # 인터넷 전문 은행 앱 리뷰 현황
-document.add_paragraph(' 5. 인터넷 전문 은행 모바일 앱 사용자 반응 분석')
-for i in internetBanks:
-    document.add_paragraph(i)
-    document.add_paragraph('   ㅇ 워드클라우드로 나타낸 '+i+' 모바일 앱 사용자 반응')
-    document.add_paragraph('     ㄱ. 긍정적 반응')
-    document.add_picture(i+'WordCloudP.PNG', width=Cm(16), height=Cm(8))  #추후에 실제 워드클라우드 이미지로 변경할 것.
-    document.add_paragraph('     ㄴ. 부정적 반응')
-    document.add_picture(i+'WordCloudN.PNG',width=Cm(16), height=Cm(8))  #추후 변경
-    document.add_paragraph('   ㅇ 빈출 단어 Top3') 
+
 
 # 임시 변수!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 bestWordInternet='부가 서비스'
