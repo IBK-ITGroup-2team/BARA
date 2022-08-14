@@ -65,7 +65,6 @@ main.add_run('□ 주요 내용').bold=True
 
 # 1번 당행 개인 앱 리뷰 현황
 document.add_paragraph(' 1. 당행 개인고객용 모바일 앱 (i-one bank) 사용자 반응 분석')
-document.add_paragraph('   ㅇ 워드클라우드로 나타낸 당행 모바일 앱 사용자 반응')
 
 #표 생성
 grid_t_style = document.styles["Table Grid"]
@@ -103,52 +102,88 @@ IBKTableCells3[1].paragraphs[0].add_run('1\n')
 IBKTableCells3[1].paragraphs[0].add_run('2\n')
 IBKTableCells3[1].paragraphs[0].add_run('3\n')
 
-
-'''
-document.add_paragraph('     ㄱ. 긍정적 반응')
-document.add_picture('WordCloudEx.PNG', width=Cm(16), height=Cm(6))  #추후에 실제 워드클라우드 이미지로 변경할 것.
-document.add_paragraph('     - 빈출 단어 Top3')
-#임시 문자열 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-document.add_paragraph('        1. 1순위 단어')
-document.add_paragraph('        2. 2순위 단어')
-document.add_paragraph('        3. 3순위 단어')
-
-document.add_paragraph('     ㄴ. 부정적 반응')
-document.add_picture('WordCloudEx.PNG', width=Cm(16), height=Cm(8))  #추후에 실제 워드클라우드 이미지로 변경할 것.
-#임시 문자열 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-document.add_paragraph('   ㅇ 빈출 단어 Top3')
-#임시 문자열 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-document.add_paragraph('        1. 1순위 단어')
-document.add_paragraph('        2. 2순위 단어')
-document.add_paragraph('        3. 3순위 단어')
-'''
 document.add_paragraph('')
 
-#빈출 단어 도출
-
-# 추후 워드 클라우드 코드와 연결
-'''
-for i in range(3):
-    document.add_paragraph(i'. 'array[i])
-'''
-document.add_paragraph('')
-
-# 2번 타행 개인 앱 리뷰 현황
+#  하나은행 개인 앱 리뷰 현황
 document.add_paragraph(' 2. 타행 개인고객용 모바일 앱 사용자 반응 분석')
-for i in banks:
-    document.add_paragraph(i+"은행")
-    document.add_paragraph('   ㅇ 워드클라우드로 나타낸 '+i+'은행 모바일 앱 사용자 반응')
-    document.add_paragraph('     ㄱ. 긍정적 반응')
-    document.add_picture(i+'WordCloudP.PNG', width=Cm(16), height=Cm(8))  #추후에 실제 워드클라우드 이미지로 변경할 것.
-    document.add_paragraph('   ㅇ 빈출 단어 Top3')
-    document.add_paragraph('     ㄴ. 부정적 반응')
-    document.add_picture(i+'WordCloudN.PNG',width=Cm(16), height=Cm(8))  #추후 변경
-    document.add_paragraph('   ㅇ 빈출 단어 Top3')    
-    # 추후 워드 클라우드 코드와 연결
-    '''
-    for i in range(3):
-        document.add_paragraph(i'. 'array[i])
-    '''
+document.add_paragraph('    ㅇ 하나은행')
+
+# 하나은행 표 생성
+HANA1Table = document.add_table(3,2,grid_t_style)
+
+HANA1Cells1=HANA1Table.rows[0].cells
+HANA1Cells1[0].paragraphs[0].add_run('긍정적 반응').bold=True
+HANA1Cells1[0].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
+
+HANA1TableCells1=HANA1Table.rows[0].cells
+HANA1Cells1[1].paragraphs[0].add_run('부정적 반응').bold=True
+HANA1TableCells1[1].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
+
+# 표에 워드클라우드 삽입
+HANACell10=HANA1Table.cell(1,0)
+HANAPara10=HANACell10.add_paragraph()
+HANARun10=HANAPara10.add_run()
+HANARun10.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+
+HANACell11=HANA1Table.cell(1,1)
+HANAPara11=HANACell11.add_paragraph()
+HANARun11=HANAPara11.add_run()
+HANARun11.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+
+# 긍정 빈출 단어 Top3
+HANATableCells3=HANA1Table.rows[2].cells
+HANATableCells3[0].paragraphs[0].add_run('빈출 단어 Top3\n')
+HANATableCells3[0].paragraphs[0].add_run('1\n')
+HANATableCells3[0].paragraphs[0].add_run('2\n')
+HANATableCells3[0].paragraphs[0].add_run('3\n')
+
+# 부정 빈출 단어 Top3
+HANATableCells3[1].paragraphs[0].add_run('빈출 단어 Top3\n')
+HANATableCells3[1].paragraphs[0].add_run('1\n')
+HANATableCells3[1].paragraphs[0].add_run('2\n')
+HANATableCells3[1].paragraphs[0].add_run('3\n')
+    
+document.add_paragraph('')
+document.add_paragraph('')
+
+#국민은행 앱 리뷰 현황
+document.add_paragraph('    ㅇ 국민은행')
+
+# 국민은행 표 생성
+KB1Table = document.add_table(3,2,grid_t_style)
+
+KBCells1=KB1Table.rows[0].cells
+KBCells1[0].paragraphs[0].add_run('긍정적 반응').bold=True
+KBCells1[0].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
+
+KB1TableCells1=KB1Table.rows[0].cells
+KBCells1[1].paragraphs[0].add_run('부정적 반응').bold=True
+KB1TableCells1[1].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
+
+# 표에 워드클라우드 삽입
+KBCell10=KB1Table.cell(1,0)
+KBPara10=KBCell10.add_paragraph()
+KBRun10=KBPara10.add_run()
+KBRun10.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+
+KBCell11=KB1Table.cell(1,1)
+KBPara11=KBCell11.add_paragraph()
+KBRun11=KBPara11.add_run()
+KBRun11.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+
+# 긍정 빈출 단어 Top3
+KBTableCells3=KB1Table.rows[2].cells
+KBTableCells3[0].paragraphs[0].add_run('빈출 단어 Top3\n')
+KBTableCells3[0].paragraphs[0].add_run('1\n')
+KBTableCells3[0].paragraphs[0].add_run('2\n')
+KBTableCells3[0].paragraphs[0].add_run('3\n')
+
+# 부정 빈출 단어 Top3
+KBTableCells3[1].paragraphs[0].add_run('빈출 단어 Top3\n')
+KBTableCells3[1].paragraphs[0].add_run('1\n')
+KBTableCells3[1].paragraphs[0].add_run('2\n')
+KBTableCells3[1].paragraphs[0].add_run('3\n')
+
     
 # 임시 변수 !!!!!!!!!!!!!!!!!!!!!! 나중에 지우기
 bestWord='UI 개선'    
