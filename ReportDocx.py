@@ -9,6 +9,7 @@ from docx.text.run import Font
 from docx.oxml.ns import qn 
 
 import smtplib
+import os
 from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication  #메일의 첨부 파일을 base64 형식으로 변환
 from email.mime.base import MIMEBase
@@ -185,17 +186,23 @@ s.starttls()    # TLS(Transport Layer Security) 보안
 
 s.login('IBK.ITgroup.2@gmail.com','czhoerpcnkfzqsdh')  # 메일을 보내는 계정
 
-#메일 내용
-msg=MIMEText(datetime.today().strftime("%Y. %m. %d")+"의 모바일 앱 사용자 반응 비교 보고서입니다.")
-#메일 제목
-msg['Subject']=datetime.today().strftime("%Y. %m. %d")+' I-one bank 사용자 반응 보고서'
+#메일 정보
+msg=MIMEMultipart()
+msg['From']='IBK.ITgroup.2@gmail.com'
+msg['To']='bethh05108@gmail.com'
+msg['Subject']=datetime.today().strftime("%Y. %m. %d")+ " I-one bank 사용자 반응 보고서입니다."
 
-#보고서 첨부
-attachment=open('report.docx','rb')
-part=MIMEBase('application','octet-stream')
-part.set_payload((attachment).read())
+#메일 내용
+content=datetime.today().strftime("%Y. %m. %d")+ "I-one bank 사용자 반응 보고서입니다."
+part2=MIMEText(content,'plain')
+msg.attach(part2)
+
+# 보고서 첨부
+part = MIMEBase('application','octet-stream')
+with open("report.docx",'rb') as file:
+    part.set_payload(file.read())
 encoders.encode_base64(part)
-#part.add_header('Content-Disposition','attachment; filename= '+ filename)
+part.add_header('Content-Disposition','attachment',filename='report.docx')
 msg.attach(part)
 
 #메일 전송
