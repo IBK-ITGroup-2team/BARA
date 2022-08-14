@@ -66,6 +66,45 @@ main.add_run('□ 주요 내용').bold=True
 # 1번 당행 개인 앱 리뷰 현황
 document.add_paragraph(' 1. 당행 개인고객용 모바일 앱 (i-one bank) 사용자 반응 분석')
 document.add_paragraph('   ㅇ 워드클라우드로 나타낸 당행 모바일 앱 사용자 반응')
+
+#표 생성
+grid_t_style = document.styles["Table Grid"]
+IBKTable = document.add_table(3,2,grid_t_style)
+
+IBKTableCells1=IBKTable.rows[0].cells
+IBKTableCells1[0].paragraphs[0].add_run('긍정적 반응').bold=True
+IBKTableCells1[0].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
+
+IBKTableCells1=IBKTable.rows[0].cells
+IBKTableCells1[1].paragraphs[0].add_run('부정적 반응').bold=True
+IBKTableCells1[1].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
+
+# 표에 워드클라우드 삽입
+IBKCell10=IBKTable.cell(1,0)
+IBKPara10=IBKCell10.add_paragraph()
+IBKRun10=IBKPara10.add_run()
+IBKRun10.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+
+IBKCell11=IBKTable.cell(1,1)
+IBKPara11=IBKCell11.add_paragraph()
+IBKRun11=IBKPara11.add_run()
+IBKRun11.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+
+# 긍정 빈출 단어 Top3
+IBKTableCells3=IBKTable.rows[2].cells
+IBKTableCells3[0].paragraphs[0].add_run('빈출 단어 Top3\n')
+IBKTableCells3[0].paragraphs[0].add_run('1\n')
+IBKTableCells3[0].paragraphs[0].add_run('2\n')
+IBKTableCells3[0].paragraphs[0].add_run('3\n')
+
+# 부정 빈출 단어 Top3
+IBKTableCells3[1].paragraphs[0].add_run('빈출 단어 Top3\n')
+IBKTableCells3[1].paragraphs[0].add_run('1\n')
+IBKTableCells3[1].paragraphs[0].add_run('2\n')
+IBKTableCells3[1].paragraphs[0].add_run('3\n')
+
+
+'''
 document.add_paragraph('     ㄱ. 긍정적 반응')
 document.add_picture('WordCloudEx.PNG', width=Cm(16), height=Cm(6))  #추후에 실제 워드클라우드 이미지로 변경할 것.
 document.add_paragraph('     - 빈출 단어 Top3')
@@ -82,7 +121,7 @@ document.add_paragraph('   ㅇ 빈출 단어 Top3')
 document.add_paragraph('        1. 1순위 단어')
 document.add_paragraph('        2. 2순위 단어')
 document.add_paragraph('        3. 3순위 단어')
-
+'''
 document.add_paragraph('')
 
 #빈출 단어 도출
@@ -175,10 +214,11 @@ paragraphLast=document.paragraphs[-1]
 #paragraphLast.font.size=Document.shared.Pt(20)
 paragraphLast.alignment=WD_ALIGN_PARAGRAPH.CENTER   #마지막 문단
 
-
-
 #파일 저장 // 마지막 단계
 document.save("report.docx")
+
+
+'''
 
 # 보고서를 이메일로 발송
 s=smtplib.SMTP('smtp.gmail.com',587)    #gmail 포트번호 587
@@ -210,4 +250,4 @@ s.sendmail("IBK.ITgroup.2@gmail.com","bethh05108@gmail.com",msg.as_string())
 
 #세션 종료
 s.quit()
-
+'''
