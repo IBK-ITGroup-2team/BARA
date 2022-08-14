@@ -228,7 +228,87 @@ SHTableCells3[1].paragraphs[0].add_run('3\n')
 for i in range(3):
     document.add_paragraph('')
 
-    
+# 농협 은행 개인 앱 리뷰 현황
+document.add_paragraph('    ㅇ 농협은행')
+
+# 농협은행 표 생성
+NH1Table = document.add_table(3,2,grid_t_style)
+
+NHCells1=NH1Table.rows[0].cells
+NHCells1[0].paragraphs[0].add_run('긍정적 반응').bold=True
+NHCells1[0].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
+
+NH1TableCells1=NH1Table.rows[0].cells
+NHCells1[1].paragraphs[0].add_run('부정적 반응').bold=True
+NH1TableCells1[1].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
+
+# 표에 워드클라우드 삽입-신한
+NHCell10=NH1Table.cell(1,0)
+NHPara10=NHCell10.add_paragraph()
+NHRun10=NHPara10.add_run()
+NHRun10.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+
+NHCell11=NH1Table.cell(1,1)
+NHPara11=NHCell11.add_paragraph()
+NHRun11=NHPara11.add_run()
+NHRun11.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+
+# 긍정 빈출 단어 Top3
+NHTableCells3=NH1Table.rows[2].cells
+NHTableCells3[0].paragraphs[0].add_run('빈출 단어 Top3\n')
+NHTableCells3[0].paragraphs[0].add_run('1\n')
+NHTableCells3[0].paragraphs[0].add_run('2\n')
+NHTableCells3[0].paragraphs[0].add_run('3\n')
+
+# 부정 빈출 단어 Top3
+NHTableCells3[1].paragraphs[0].add_run('빈출 단어 Top3\n')
+NHTableCells3[1].paragraphs[0].add_run('1\n')
+NHTableCells3[1].paragraphs[0].add_run('2\n')
+NHTableCells3[1].paragraphs[0].add_run('3\n')
+
+document.add_paragraph('')
+document.add_paragraph('')
+
+#우리은행 개인 앱 리뷰 현황
+document.add_paragraph('    ㅇ 우리은행')
+
+# 우리은행 표 생성
+WOORI1Table = document.add_table(3,2,grid_t_style)
+
+WOORICells1=WOORI1Table.rows[0].cells
+WOORICells1[0].paragraphs[0].add_run('긍정적 반응').bold=True
+WOORICells1[0].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
+
+WOORI1TableCells1=WOORI1Table.rows[0].cells
+WOORICells1[1].paragraphs[0].add_run('부정적 반응').bold=True
+WOORI1TableCells1[1].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
+
+# 표에 워드클라우드 삽입-신한
+WOORICell10=WOORI1Table.cell(1,0)
+WOORIPara10=WOORICell10.add_paragraph()
+WOORIRun10=WOORIPara10.add_run()
+WOORIRun10.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+
+WOORICell11=WOORI1Table.cell(1,1)
+WOORIPara11=WOORICell11.add_paragraph()
+WOORIRun11=WOORIPara11.add_run()
+WOORIRun11.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+
+# 긍정 빈출 단어 Top3
+WOORITableCells3=WOORI1Table.rows[2].cells
+WOORITableCells3[0].paragraphs[0].add_run('빈출 단어 Top3\n')
+WOORITableCells3[0].paragraphs[0].add_run('1\n')
+WOORITableCells3[0].paragraphs[0].add_run('2\n')
+WOORITableCells3[0].paragraphs[0].add_run('3\n')
+
+# 부정 빈출 단어 Top3
+WOORITableCells3[1].paragraphs[0].add_run('빈출 단어 Top3\n')
+WOORITableCells3[1].paragraphs[0].add_run('1\n')
+WOORITableCells3[1].paragraphs[0].add_run('2\n')
+WOORITableCells3[1].paragraphs[0].add_run('3\n')
+
+#####################################################################################저녁 먹고 옴
+
 # 임시 변수 !!!!!!!!!!!!!!!!!!!!!! 나중에 지우기
 bestWord='UI 개선'    
 resultPersonal=document.add_paragraph('')    
