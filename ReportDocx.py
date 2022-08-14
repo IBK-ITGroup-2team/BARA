@@ -1,3 +1,4 @@
+from msilib.schema import MIME
 from telnetlib import DO
 from docx import Document
 from docx.shared import Pt
@@ -5,7 +6,14 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 from datetime import datetime
 from docx.shared import Cm, Inches
 from docx.text.run import Font
-from docx.oxml.ns import qn
+from docx.oxml.ns import qn 
+
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.application import MIMEApplication  #메일의 첨부 파일을 base64 형식으로 변환
+from email.mime.base import MIMEBase
+from email.mime.multipart import MIMEMultipart
+from email import encoders
 
 document=Document()
 # 스타일 적용
@@ -170,4 +178,29 @@ paragraphLast.alignment=WD_ALIGN_PARAGRAPH.CENTER   #마지막 문단
 
 #파일 저장 // 마지막 단계
 document.save("report.docx")
+
+# 보고서를 이메일로 발송
+s=smtplib.SMTP('smtp.gmail.com',587)    #gmail 포트번호 587
+s.starttls()    # TLS(Transport Layer Security) 보안
+
+s.login('IBK.ITgroup.2@gmail.com','czhoerpcnkfzqsdh')  # 메일을 보내는 계정
+
+#메일 내용
+msg=MIMEText(datetime.today().strftime("%Y. %m. %d")+"의 모바일 앱 사용자 반응 비교 보고서입니다.")
+#메일 제목
+msg['Subject']=datetime.today().strftime("%Y. %m. %d")+' I-one bank 사용자 반응 보고서'
+
+#보고서 첨부
+attachment=open('report.docx','rb')
+part=MIMEBase('application','octet-stream')
+part.set_payload((attachment).read())
+encoders.encode_base64(part)
+#part.add_header('Content-Disposition','attachment; filename= '+ filename)
+msg.attach(part)
+
+#메일 전송
+s.sendmail("IBK.ITgroup.2@gmail.com","bethh05108@gmail.com",msg.as_string())
+
+#세션 종료
+s.quit()
 
