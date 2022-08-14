@@ -521,6 +521,47 @@ NHTableCells3E[1].paragraphs[0].add_run('3\n')
 document.add_paragraph('')
 document.add_paragraph('')
     
+# 우리 은행 기업 고객용 앱 현황
+document.add_paragraph('    ㅇ 우리은행')
+
+# 우리은행 표 생성
+WOORI1TableE = document.add_table(3,2,grid_t_style)
+
+WOORI1Cells1E=WOORI1TableE.rows[0].cells
+WOORI1Cells1E[0].paragraphs[0].add_run('긍정적 반응').bold=True
+WOORI1Cells1E[0].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
+
+WOORI1TableCells1E=WOORI1TableE.rows[0].cells
+WOORI1Cells1E[1].paragraphs[0].add_run('부정적 반응').bold=True
+WOORI1TableCells1E[1].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
+
+# 표에 워드클라우드 삽입
+WOORICell10E=WOORI1TableE.cell(1,0)
+WOORIPara10E=WOORICell10E.add_paragraph()
+WOORIRun10E=WOORIPara10E.add_run()
+WOORIRun10E.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+
+WOORICell11E=WOORI1TableE.cell(1,1)
+WOORIPara11E=WOORICell11E.add_paragraph()
+WOORIRun11E=WOORIPara11E.add_run()
+WOORIRun11E.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+
+# 긍정 빈출 단어 Top3
+WOORITableCells3E=WOORI1TableE.rows[2].cells
+WOORITableCells3E[0].paragraphs[0].add_run('빈출 단어 Top3\n')
+WOORITableCells3E[0].paragraphs[0].add_run('1\n')
+WOORITableCells3E[0].paragraphs[0].add_run('2\n')
+WOORITableCells3E[0].paragraphs[0].add_run('3\n')
+
+# 부정 빈출 단어 Top3
+WOORITableCells3E[1].paragraphs[0].add_run('빈출 단어 Top3\n')
+WOORITableCells3E[1].paragraphs[0].add_run('1\n')
+WOORITableCells3E[1].paragraphs[0].add_run('2\n')
+WOORITableCells3E[1].paragraphs[0].add_run('3\n')
+    
+document.add_paragraph('')
+document.add_paragraph('')
+
 # 임시 변수 !!!!!!!!!!!!!!!!!!!!!! 나중에 지우기
 bestWord2='기업 이미지 개선'    
 resultEnterprise=document.add_paragraph('')    
