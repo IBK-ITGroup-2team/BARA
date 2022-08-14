@@ -193,3 +193,30 @@ if __name__ == '__main__':
     create_WordCloud('./reviews/기업고객/SHINHANbank_enterprise_review_dataset.csv', 4, 5, 'RdBu_r',
               './wordcloud/기업고객/SHINHAN_E_WordCloud_P.png')
     SHINHAN_E_positive_top3 = top3
+
+    # 카카오뱅크
+    create_WordCloud('./reviews/인터넷뱅크/KAKAO_review_dataset.csv', 1, 2, 'Oranges_r',
+                     './wordcloud/인터넷뱅크/KAKAO_WordCloud_N.png')
+    KAKAO_negative_top3 = top3
+
+    create_WordCloud('./reviews/인터넷뱅크/KAKAO_review_dataset.csv', 4, 5, 'RdBu_r',
+                     './wordcloud/인터넷뱅크/KAKAO_WordCloud_P.png')
+    KAKAO_positive_top3 = top3
+
+    # 케이뱅크
+    create_WordCloud('./reviews/인터넷뱅크/KBank_review_dataset.csv', 1, 2, 'Oranges_r',
+                     './wordcloud/인터넷뱅크/KBank_WordCloud_N.png')
+    KBank_negative_top3 = top3
+
+    create_WordCloud('./reviews/인터넷뱅크/KBank_review_dataset.csv', 4, 5, 'RdBu_r',
+                     './wordcloud/인터넷뱅크/KBank_WordCloud_P.png')
+    KBank_positive_top3 = top3
+
+    # 토스
+    create_WordCloud('./reviews/인터넷뱅크/TOSS_review_dataset.csv', 1, 2, 'Oranges_r',
+                     './wordcloud/인터넷뱅크/TOSS_WordCloud_N.png')
+    TOSS_negative_top3 = top3
+
+    create_WordCloud('./reviews/인터넷뱅크/TOSS_review_dataset.csv', 4, 5, 'RdBu_r',
+                     './wordcloud/인터넷뱅크/TOSS_WordCloud_P.png')
+    TOSS_positive_top3 = top3
