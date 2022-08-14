@@ -62,6 +62,8 @@ def create_WordCloud(path, rate1, rate2, colormap, savepath):
     # print(okt.pos(text, norm=True, stem=True))
 
     SW = define_stopwords("C:\\Users\\Cyber\\PycharmProjects\\Bank\\stopwords-ko.txt")
+    # SW = define_stopwords("C:/Users/9993h/OneDrive/desktop/BankAppReviewAnalysis/BARA/stopwords/stopwords-ko.txt")
+
     cleaned_text = text_cleaning(text)
     print("전처리: ", cleaned_text)
 

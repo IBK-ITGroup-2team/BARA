@@ -94,18 +94,6 @@ def main():
     dataset = []
     # 데이터 넘버링을 위한 변수
     review_num = 0
-    # 불용어 처리 리뷰 데이터만 저장
-    result = []
-    # 불용어
-    stop_words = []
-
-    # 불용어 처리 함수
-    def define_stopwords(path):
-        f = open(path, "r", encoding="UTF-8")
-        data = f.read().splitlines()
-
-        for word in data:
-            stop_words.append(word)
 
     # 리뷰 1개씩 접근해 정보 추출
     for review in review_source:
@@ -149,15 +137,6 @@ def main():
             }
             dataset.append(data)
 
-            word_tokens = word_tokenize(content)
-
-            # 불용어 텍스트파일 경로 설정
-            define_stopwords("C:/Users/9993h/OneDrive/desktop/BankAppReviewAnalysis/BARA/stopwords/stopwords-ko.txt")
-
-            for w in word_tokens:
-                # 한글자는 의미 없어서 제외 처리
-                if w not in stop_words and len(w) > 1:
-                    result.append(w)
 
     # 크롤링한 리뷰 csv 파일로 저장
     df = pd.DataFrame(dataset)
@@ -166,16 +145,6 @@ def main():
     # 저장한 리뷰 정보 불러오기
     df = pd.read_csv('./dataset/WOORIbank_enterprise_review_dataset.csv', encoding='utf-8-sig')
     df = df.drop(['Unnamed: 0'], axis=1)  # 불필요한 칼럼 삭제
-    df
-
-    # 불용어 처리한 리뷰 csv 파일로 저장
-    swdf = pd.DataFrame(result)
-    swdf.to_csv('./dataset/WOORIbank_enterprise_stopwords_review_dataset.csv', encoding='utf-8-sig')
-
-    # 불용어 처리한 리뷰 정보 불러오기
-    swdf = pd.read_csv('./dataset/WOORIbank_enterprise_stopwords_review_dataset.csv', encoding='utf-8-sig')
-    swdf = swdf.drop(['Unnamed: 0'], axis=1)  # 불필요한 칼럼 삭제
-    swdf
 
 
 sched = BackgroundScheduler()
