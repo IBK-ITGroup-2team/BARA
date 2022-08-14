@@ -123,12 +123,12 @@ HANA1TableCells1[1].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
 HANACell10=HANA1Table.cell(1,0)
 HANAPara10=HANACell10.add_paragraph()
 HANARun10=HANAPara10.add_run()
-HANARun10.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+HANARun10.add_picture("HANA_WordCloud_P.PNG",width=Cm(7),height=Cm(5))
 
 HANACell11=HANA1Table.cell(1,1)
 HANAPara11=HANACell11.add_paragraph()
 HANARun11=HANAPara11.add_run()
-HANARun11.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+HANARun11.add_picture("HANA_WordCloud_N.PNG",width=Cm(7),height=Cm(5))
 
 # 긍정 빈출 단어 Top3
 HANATableCells3=HANA1Table.rows[2].cells
@@ -164,12 +164,12 @@ KB1TableCells1[1].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
 KBCell10=KB1Table.cell(1,0)
 KBPara10=KBCell10.add_paragraph()
 KBRun10=KBPara10.add_run()
-KBRun10.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+KBRun10.add_picture("KB_WordCloud_P.PNG",width=Cm(7),height=Cm(5))
 
 KBCell11=KB1Table.cell(1,1)
 KBPara11=KBCell11.add_paragraph()
 KBRun11=KBPara11.add_run()
-KBRun11.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+KBRun11.add_picture("KB_WordCloud_N.PNG",width=Cm(7),height=Cm(5))
 
 # 긍정 빈출 단어 Top3
 KBTableCells3=KB1Table.rows[2].cells
@@ -205,12 +205,12 @@ SH1TableCells1[1].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
 SHCell10=SH1Table.cell(1,0)
 SHPara10=SHCell10.add_paragraph()
 SHRun10=SHPara10.add_run()
-SHRun10.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+SHRun10.add_picture("SHINHAN_WordCloud_P.PNG",width=Cm(7),height=Cm(5))
 
 SHCell11=SH1Table.cell(1,1)
 SHPara11=SHCell11.add_paragraph()
 SHRun11=SHPara11.add_run()
-SHRun11.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+SHRun11.add_picture("SHINHAN_WordCloud_N.PNG",width=Cm(7),height=Cm(5))
 
 # 긍정 빈출 단어 Top3
 SHTableCells3=SH1Table.rows[2].cells
@@ -242,16 +242,16 @@ NH1TableCells1=NH1Table.rows[0].cells
 NHCells1[1].paragraphs[0].add_run('부정적 반응').bold=True
 NH1TableCells1[1].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
 
-# 표에 워드클라우드 삽입-신한
+# 표에 워드클라우드 삽입-농협
 NHCell10=NH1Table.cell(1,0)
 NHPara10=NHCell10.add_paragraph()
 NHRun10=NHPara10.add_run()
-NHRun10.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+NHRun10.add_picture("NH_WordCloud_P.PNG",width=Cm(7),height=Cm(5))
 
 NHCell11=NH1Table.cell(1,1)
 NHPara11=NHCell11.add_paragraph()
 NHRun11=NHPara11.add_run()
-NHRun11.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+NHRun11.add_picture("NH_WordCloud_N.PNG",width=Cm(7),height=Cm(5))
 
 # 긍정 빈출 단어 Top3
 NHTableCells3=NH1Table.rows[2].cells
@@ -283,16 +283,16 @@ WOORI1TableCells1=WOORI1Table.rows[0].cells
 WOORICells1[1].paragraphs[0].add_run('부정적 반응').bold=True
 WOORI1TableCells1[1].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
 
-# 표에 워드클라우드 삽입-신한
+# 표에 워드클라우드 삽입-우리
 WOORICell10=WOORI1Table.cell(1,0)
 WOORIPara10=WOORICell10.add_paragraph()
 WOORIRun10=WOORIPara10.add_run()
-WOORIRun10.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+WOORIRun10.add_picture("WOORI_WordCloud_P.PNG",width=Cm(7),height=Cm(5))
 
 WOORICell11=WOORI1Table.cell(1,1)
 WOORIPara11=WOORICell11.add_paragraph()
 WOORIRun11=WOORIPara11.add_run()
-WOORIRun11.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+WOORIRun11.add_picture("WOORI_WordCloud_N.PNG",width=Cm(7),height=Cm(5))
 
 # 긍정 빈출 단어 Top3
 WOORITableCells3=WOORI1Table.rows[2].cells
@@ -374,12 +374,12 @@ HANA1TableCells1E[1].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
 HANACell10E=HANA1TableE.cell(1,0)
 HANAPara10E=HANACell10E.add_paragraph()
 HANARun10E=HANAPara10E.add_run()
-HANARun10E.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+HANARun10E.add_picture("HANA_E_WordCloud_P.PNG",width=Cm(7),height=Cm(5))
 
 HANACell11E=HANA1TableE.cell(1,1)
 HANAPara11E=HANACell11E.add_paragraph()
 HANARun11E=HANAPara11E.add_run()
-HANARun11E.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+HANARun11E.add_picture("HANA_E_WordCloud_N.PNG",width=Cm(7),height=Cm(5))
 
 # 긍정 빈출 단어 Top3
 HANATableCells3E=HANA1TableE.rows[2].cells
@@ -415,12 +415,12 @@ KB1TableCells1E[1].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
 KBCell10E=KB1TableE.cell(1,0)
 KBPara10E=KBCell10E.add_paragraph()
 KBRun10E=KBPara10E.add_run()
-KBRun10E.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+KBRun10E.add_picture("KB_E_WordCloud_P.PNG",width=Cm(7),height=Cm(5))
 
 KBCell11E=KB1TableE.cell(1,1)
 KBPara11E=KBCell11E.add_paragraph()
 KBRun11E=KBPara11E.add_run()
-KBRun11E.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+KBRun11E.add_picture("KB_E_WordCloud_N.PNG",width=Cm(7),height=Cm(5))
 
 # 긍정 빈출 단어 Top3
 KBTableCells3E=KB1TableE.rows[2].cells
@@ -456,12 +456,12 @@ SH1TableCells1E[1].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
 SHCell10E=SH1TableE.cell(1,0)
 SHPara10E=SHCell10E.add_paragraph()
 SHRun10E=SHPara10E.add_run()
-SHRun10E.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+SHRun10E.add_picture("SHINHAN_E_WordCloud_P.PNG",width=Cm(7),height=Cm(5))
 
 SHCell11E=SH1TableE.cell(1,1)
 SHPara11E=SHCell11E.add_paragraph()
 SHRun11E=SHPara11E.add_run()
-SHRun11E.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+SHRun11E.add_picture("SHINHAN_E_WordCloud_N.PNG",width=Cm(7),height=Cm(5))
 
 # 긍정 빈출 단어 Top3
 SHTableCells3E=SH1TableE.rows[2].cells
@@ -498,12 +498,12 @@ NH1TableCells1E[1].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
 NHCell10E=NH1TableE.cell(1,0)
 NHPara10E=NHCell10E.add_paragraph()
 NHRun10E=NHPara10E.add_run()
-NHRun10E.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+NHRun10E.add_picture("NH_E_WordCloud_P.PNG",width=Cm(7),height=Cm(5))
 
 NHCell11E=NH1TableE.cell(1,1)
 NHPara11E=NHCell11E.add_paragraph()
 NHRun11E=NHPara11E.add_run()
-NHRun11E.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+NHRun11E.add_picture("NH_E_WordCloud_N.PNG",width=Cm(7),height=Cm(5))
 
 # 긍정 빈출 단어 Top3
 NHTableCells3E=NH1TableE.rows[2].cells
@@ -539,12 +539,12 @@ WOORI1TableCells1E[1].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
 WOORICell10E=WOORI1TableE.cell(1,0)
 WOORIPara10E=WOORICell10E.add_paragraph()
 WOORIRun10E=WOORIPara10E.add_run()
-WOORIRun10E.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+WOORIRun10E.add_picture("WOORI_E_WordCloud_P.PNG",width=Cm(7),height=Cm(5))
 
 WOORICell11E=WOORI1TableE.cell(1,1)
 WOORIPara11E=WOORICell11E.add_paragraph()
 WOORIRun11E=WOORIPara11E.add_run()
-WOORIRun11E.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+WOORIRun11E.add_picture("WOORI_E_WordCloud_N.PNG",width=Cm(7),height=Cm(5))
 
 # 긍정 빈출 단어 Top3
 WOORITableCells3E=WOORI1TableE.rows[2].cells
