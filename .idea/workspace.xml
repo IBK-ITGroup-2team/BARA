@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71cff64c-3815-43ee-806c-c19e4ee1702f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/WordCloud.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawling.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawling.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/WOORIbank_enterprise_stopwords_review_dataset.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/WOORIbank_enterprise_stopwords_review_dataset.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/data_html.html" beforeDir="false" afterPath="$PROJECT_DIR$/dataset/data_html.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +44,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Cyber/PycharmProjects/BARA/WordCloud.py",
+    "last_opened_file_path": "C:/Users/Cyber/PycharmProjects/BARA",
     "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
 }]]></component>
@@ -51,7 +53,7 @@
       <recent name="C:\Users\Cyber\Desktop\BARA\BARA" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.WordCloud">
+  <component name="RunManager" selected="Python.crawling">
     <configuration name="WordCloud" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="BARA" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -111,6 +113,7 @@
       <updated>1659492163451</updated>
       <workItem from="1659492165622" duration="12058000" />
       <workItem from="1660301679718" duration="1139000" />
+      <workItem from="1660445454727" duration="5910000" />
     </task>
     <servers />
   </component>
@@ -134,6 +137,8 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/BARA$service.coverage" NAME="service Coverage Results" MODIFIED="1659502699240" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/AppData/Local/Programs/Python/Python39/Lib/site-packages/selenium/webdriver/common" />
     <SUITE FILE_PATH="coverage/BARA$ShinhanBank.coverage" NAME="ShinhanBank Coverage Results" MODIFIED="1659504264734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BARA$WordCloud.coverage" NAME="WordCloud Coverage Results" MODIFIED="1660302839477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BARA$crawling.coverage" NAME="crawling Coverage Results" MODIFIED="1660448290811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BARA$test.coverage" NAME="test Coverage Results" MODIFIED="1659504041788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
