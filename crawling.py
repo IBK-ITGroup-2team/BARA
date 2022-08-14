@@ -156,13 +156,3 @@ df.to_csv('./dataset/WOORIbank_enterprise_review_dataset.csv', encoding='utf-8-s
 # 저장한 리뷰 정보 불러오기
 df = pd.read_csv('./dataset/WOORIbank_enterprise_review_dataset.csv', encoding='utf-8-sig')
 df = df.drop(['Unnamed: 0'], axis=1)  # 불필요한 칼럼 삭제
-df
-
-# 불용어 처리한 리뷰 csv 파일로 저장
-swdf = pd.DataFrame(result)
-swdf.to_csv('./dataset/WOORIbank_enterprise_stopwords_review_dataset.csv', encoding='utf-8-sig')
-
-# 불용어 처리한 리뷰 정보 불러오기
-swdf = pd.read_csv('./dataset/WOORIbank_enterprise_stopwords_review_dataset.csv', encoding='utf-8-sig')
-swdf = swdf.drop(['Unnamed: 0'], axis=1)  # 불필요한 칼럼 삭제
-swdf
