@@ -184,6 +184,50 @@ KBTableCells3[1].paragraphs[0].add_run('1\n')
 KBTableCells3[1].paragraphs[0].add_run('2\n')
 KBTableCells3[1].paragraphs[0].add_run('3\n')
 
+document.add_paragraph('')
+document.add_paragraph('')
+
+# 신한은행 앱 리뷰 현황
+document.add_paragraph('    ㅇ 신한은행')
+
+# 신한은행 표 생성
+SH1Table = document.add_table(3,2,grid_t_style)
+
+SHCells1=SH1Table.rows[0].cells
+SHCells1[0].paragraphs[0].add_run('긍정적 반응').bold=True
+SHCells1[0].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
+
+SH1TableCells1=SH1Table.rows[0].cells
+SHCells1[1].paragraphs[0].add_run('부정적 반응').bold=True
+SH1TableCells1[1].paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
+
+# 표에 워드클라우드 삽입-신한
+SHCell10=SH1Table.cell(1,0)
+SHPara10=SHCell10.add_paragraph()
+SHRun10=SHPara10.add_run()
+SHRun10.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+
+SHCell11=SH1Table.cell(1,1)
+SHPara11=SHCell11.add_paragraph()
+SHRun11=SHPara11.add_run()
+SHRun11.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
+
+# 긍정 빈출 단어 Top3
+SHTableCells3=SH1Table.rows[2].cells
+SHTableCells3[0].paragraphs[0].add_run('빈출 단어 Top3\n')
+SHTableCells3[0].paragraphs[0].add_run('1\n')
+SHTableCells3[0].paragraphs[0].add_run('2\n')
+SHTableCells3[0].paragraphs[0].add_run('3\n')
+
+# 부정 빈출 단어 Top3
+SHTableCells3[1].paragraphs[0].add_run('빈출 단어 Top3\n')
+SHTableCells3[1].paragraphs[0].add_run('1\n')
+SHTableCells3[1].paragraphs[0].add_run('2\n')
+SHTableCells3[1].paragraphs[0].add_run('3\n')
+
+for i in range(3):
+    document.add_paragraph('')
+
     
 # 임시 변수 !!!!!!!!!!!!!!!!!!!!!! 나중에 지우기
 bestWord='UI 개선'    
