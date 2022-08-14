@@ -92,7 +92,7 @@ IBKRun11.add_picture("WordCloudEx.PNG",width=Cm(7),height=Cm(5))
 # 긍정 빈출 단어 Top3
 IBKTableCells3=IBKTable.rows[2].cells
 IBKTableCells3[0].paragraphs[0].add_run('빈출 단어 Top3\n')
-IBKTableCells3[0].paragraphs[0].add_run('1\n')
+IBKTableCells3[0].paragraphs[0].add_run('1. '+IBK_positive_top3[0]+'\n')
 IBKTableCells3[0].paragraphs[0].add_run('2\n')
 IBKTableCells3[0].paragraphs[0].add_run('3\n')
 
