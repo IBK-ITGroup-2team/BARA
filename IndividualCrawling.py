@@ -15,6 +15,9 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.jobstores.base import JobLookupError
 
 import time
+import EnterpriseCrawling
+import WordCloud
+import ReportDocx
 
 #개인앱 리뷰 크롤링
 def main():
@@ -67,8 +70,8 @@ def main():
     all_review_button_xpath = '/html/body/c-wiz[2]/div/div/div[1]/div[2]/div/div[1]/c-wiz[4]/section/div/div/div[5]/div/div/button/span'
     button_loading_wait = wait.until(EC.element_to_be_clickable((By.XPATH, all_review_button_xpath)))
     # '리뷰 모두 보기' 버튼 클릭
-    driver.find_element_by_xpath(all_review_button_xpath).click()
-    # driver.find_element(By.XPATH, all_review_button_xpath).click()  # 위에건 안되서 이렇게 수정함(셀레니움 버전 차이)
+    # driver.find_element_by_xpath(all_review_button_xpath).click()
+    driver.find_element(By.XPATH, all_review_button_xpath).click()  # 위에건 안되서 이렇게 수정함(셀레니움 버전 차이)
 
     # '리뷰 모두 보기' 페이지 렌더링 대기
     all_review_page_xpath = '/html/body/div[4]/div[2]/div/div/div/div/div[2]'
@@ -147,11 +150,22 @@ def main():
     df = pd.read_csv('reviews/인터넷뱅크/KAKAO_review_dataset.csv', encoding='utf-8-sig')
     df = df.drop(['Unnamed: 0'], axis=1)  # 불필요한 칼럼 삭제
 
-# main()
-sched = BackgroundScheduler()
-sched.start()
-#매월 1일 오전 9시에 main 함수 실행
-sched.add_job(main, 'cron', day=1, hour=9)
+    # 기업 크롤링 코드 연결
+    EnterpriseCrawling.main()
 
-while True:
-    time.sleep(1)
+    # 워드클라우드 코드 연결
+    WordCloud.main()
+
+    # 보고서 코드 연결
+    ReportDocx.main()
+
+# 전체 메인함수
+main()
+
+# sched = BackgroundScheduler()
+# sched.start()
+# #매월 1일 오전 9시에 main 함수 실행
+# sched.add_job(main, 'cron', day=1, hour=9)
+#
+# while True:
+#     time.sleep(1)
