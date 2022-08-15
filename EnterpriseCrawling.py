@@ -63,8 +63,8 @@ def main():
     all_review_button_xpath = '/html/body/c-wiz[2]/div/div/div[1]/div[2]/div/div[1]/c-wiz[4]/section/div/div/div[5]/div/div/button/span'
     button_loading_wait = wait.until(EC.element_to_be_clickable((By.XPATH, all_review_button_xpath)))
     # '리뷰 모두 보기' 버튼 클릭
-    driver.find_element_by_xpath(all_review_button_xpath).click()
-    # driver.find_element(By.XPATH, all_review_button_xpath).click()  # 위에건 안되서 이렇게 수정함(셀레니움 버전차이)
+    # driver.find_element_by_xpath(all_review_button_xpath).click()
+    driver.find_element(By.XPATH, all_review_button_xpath).click()  # 위에건 안되서 이렇게 수정함(셀레니움 버전차이)
 
     # '리뷰 모두 보기' 페이지 렌더링 대기
     all_review_page_xpath = '/html/body/div[4]/div[2]/div/div/div/div/div[2]'
@@ -145,17 +145,6 @@ def main():
             }
             dataset.append(data)
 
-            word_tokens = word_tokenize(content)
-
-            # 불용어 텍스트파일 경로 설정
-            define_stopwords("C:/Users/9993h/OneDrive/desktop/BankAppReviewAnalysis/BARA/stopwords/stopwords-ko.txt")
-            # define_stopwords("C:/Users/Cyber/PycharmProjects/BARA/stopwords/stopwords-ko.txt")
-
-            for w in word_tokens:
-                # 한글자는 의미 없어서 제외 처리
-                if w not in stop_words and len(w) > 1:
-                    result.append(w)
-
     # 크롤링한 리뷰 csv 파일로 저장
     df = pd.DataFrame(dataset)
     df.to_csv('./reviews/기업고객/WOORIbank_enterprise_review_dataset.csv', encoding='utf-8-sig')
@@ -164,11 +153,10 @@ def main():
     df = pd.read_csv('./reviews/기업고객/WOORIbank_enterprise_review_dataset.csv', encoding='utf-8-sig')
     df = df.drop(['Unnamed: 0'], axis=1)  # 불필요한 칼럼 삭제
 
-# main()
-sched = BackgroundScheduler()
-sched.start()
-#매월 1일 오전 9시에 main 함수 실행
-sched.add_job(main, 'cron', day=1, hour=9)
-
-while True:
-    time.sleep(1)
+# sched = BackgroundScheduler()
+# sched.start()
+# #매월 1일 오전 9시에 main 함수 실행
+# sched.add_job(main, 'cron', day=1, hour=9)
+#
+# while True:
+#     time.sleep(1)
