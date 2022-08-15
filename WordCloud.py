@@ -35,12 +35,15 @@ def define_stopwords(path):
 
 def text_tokenizing(doc):  # 형태소 분석
     global c
+    global SW
     # tokenized_doc = []
     # for word in okt.nouns(doc):
     #     if word is not in SW and len(word) >1 :
     #         tokenized_doc.append(word)
     # return tokenized_doc
 
+    # txt 파일에 불용어 등록 시 처음 한 줄 비우고 작성할 것.
+    SW = [line.rstrip() for line in SW]
     words = [word for word in okt.nouns(doc) if word not in SW and len(word) > 1]
     c = Counter(words)  # 단어별 빈도수 형태의 딕셔너리 데이터
     return c
@@ -61,8 +64,7 @@ def create_WordCloud(path, rate1, rate2, colormap, savepath):
     print(text)
     # print(okt.pos(text, norm=True, stem=True))
 
-    SW = define_stopwords("C:\\Users\\Cyber\\PycharmProjects\\Bank\\stopwords-ko.txt")
-    # SW = define_stopwords("C:/Users/9993h/OneDrive/desktop/BankAppReviewAnalysis/BARA/stopwords/stopwords-ko.txt")
+    SW = define_stopwords("./stopwords/stopwords-ko.txt")
 
     cleaned_text = text_cleaning(text)
     print("전처리: ", cleaned_text)
@@ -92,7 +94,7 @@ def main():
                      './wordcloud/개인고객/HANA_WordCloud_N.png')
     HANA_negative_top3 = top3
 
-    create_WordCloud('./reviews/개인고객/HANAreview_dataset.csv', 4, 5, 'RdBu_r', './wordcloud/개인고객/HANA_WordCloud_P.png')
+    create_WordCloud('./reviews/개인고객/HANAreview_dataset.csv', 4, 5, 'GnBu', './wordcloud/개인고객/HANA_WordCloud_P.png')
     HANA_positive_top3 = top3
 
     # 하나은행 (기업)
@@ -100,7 +102,7 @@ def main():
                      './wordcloud/기업고객/HANA_E_WordCloud_N.png')
     HANA_E_negative_top3 = top3
 
-    create_WordCloud('./reviews/기업고객/HANA_enterprise_review_dataset.csv', 4, 5, 'RdBu_r',
+    create_WordCloud('./reviews/기업고객/HANA_enterprise_review_dataset.csv', 4, 5, 'GnBu',
                      './wordcloud/기업고객/HANA_E_WordCloud_P.png')
     HANA_E_positive_top3 = top3
 
@@ -109,7 +111,7 @@ def main():
                      './wordcloud/개인고객/IBK_WordCloud_N.png')
     IBK_negative_top3 = top3
 
-    create_WordCloud('./reviews/개인고객/ibkbank_individual_review_dataset.csv', 4, 5, 'RdBu_r',
+    create_WordCloud('./reviews/개인고객/ibkbank_individual_review_dataset.csv', 4, 5, 'GnBu',
                      './wordcloud/개인고객/IBK_WordCloud_P.png')
     IBK_positive_top3 = top3
 
@@ -118,7 +120,7 @@ def main():
                      './wordcloud/기업고객/IBK_E_WordCloud_N.png')
     IBK_E_negative_top3 = top3
 
-    create_WordCloud('./reviews/기업고객/IBKreview_dataset(iONEBank기업).csv', 4, 5, 'RdBu_r',
+    create_WordCloud('./reviews/기업고객/IBKreview_dataset(iONEBank기업).csv', 4, 5, 'GnBu',
                      './wordcloud/기업고객/IBK_E_WordCloud_P.png')
     IBK_E_positive_top3 = top3
 
@@ -127,7 +129,7 @@ def main():
                      './wordcloud/개인고객/KB_WordCloud_N.png')
     KB_negative_top3 = top3
 
-    create_WordCloud('./reviews/개인고객/KBreview_dataset.csv', 4, 5, 'RdBu_r',
+    create_WordCloud('./reviews/개인고객/KBreview_dataset.csv', 4, 5, 'GnBu',
                      './wordcloud/개인고객/KB_WordCloud_P.png')
     KB_positive_top3 = top3
 
@@ -136,7 +138,7 @@ def main():
                      './wordcloud/기업고객/KB_E_WordCloud_N.png')
     KB_E_negative_top3 = top3
 
-    create_WordCloud('./reviews/기업고객/KBreview_dataset(KB스타기업뱅킹).csv', 4, 5, 'RdBu_r',
+    create_WordCloud('./reviews/기업고객/KBreview_dataset(KB스타기업뱅킹).csv', 4, 5, 'GnBu',
                      './wordcloud/기업고객/KB_E_WordCloud_P.png')
     KB_E_positive_top3 = top3
 
@@ -145,7 +147,7 @@ def main():
                      './wordcloud/개인고객/NH_WordCloud_N.png')
     NH_negative_top3 = top3
 
-    create_WordCloud('./reviews/개인고객/NHreview_dataset.csv', 4, 5, 'RdBu_r',
+    create_WordCloud('./reviews/개인고객/NHreview_dataset.csv', 4, 5, 'GnBu',
                      './wordcloud/개인고객/NH_WordCloud_P.png')
     NH_positive_top3 = top3
 
@@ -154,7 +156,7 @@ def main():
                      './wordcloud/기업고객/NH_E_WordCloud_N.png')
     NH_E_negative_top3 = top3
 
-    create_WordCloud('./reviews/기업고객/NHreview_dataset(NH기업뱅킹).csv', 4, 5, 'RdBu_r',
+    create_WordCloud('./reviews/기업고객/NHreview_dataset(NH기업뱅킹).csv', 4, 5, 'GnBu',
                      './wordcloud/기업고객/NH_E_WordCloud_P.png')
     NH_E_positive_top3 = top3
 
@@ -163,7 +165,7 @@ def main():
                      './wordcloud/개인고객/WOORI_WordCloud_N.png')
     WOORI_negative_top3 = top3
 
-    create_WordCloud('./reviews/개인고객/WONreview_dataset.csv', 4, 5, 'RdBu_r',
+    create_WordCloud('./reviews/개인고객/WONreview_dataset.csv', 4, 5, 'GnBu',
                      './wordcloud/개인고객/WOORI_WordCloud_P.png')
     WOORI_positive_top3 = top3
 
@@ -172,7 +174,7 @@ def main():
                      './wordcloud/기업고객/WOORI_E_WordCloud_N.png')
     WOORI_E_negative_top3 = top3
 
-    create_WordCloud('./reviews/기업고객/WOORIbank_enterprise_review_dataset.csv', 4, 5, 'RdBu_r',
+    create_WordCloud('./reviews/기업고객/WOORIbank_enterprise_review_dataset.csv', 4, 5, 'GnBu',
                      './wordcloud/기업고객/WOORI_E_WordCloud_P.png')
     WOORI_E_positive_top3 = top3
 
@@ -181,7 +183,7 @@ def main():
                      './wordcloud/개인고객/SHINHAN_WordCloud_N.png')
     SHINHAN_negative_top3 = top3
 
-    create_WordCloud('./reviews/개인고객/신한review_dataset.csv', 4, 5, 'RdBu_r',
+    create_WordCloud('./reviews/개인고객/신한review_dataset.csv', 4, 5, 'GnBu',
                      './wordcloud/개인고객/SHINHAN_WordCloud_P.png')
     SHINHAN_positive_top3 = top3
 
@@ -190,7 +192,7 @@ def main():
                      './wordcloud/기업고객/SHINHAN_E_WordCloud_N.png')
     SHINHAN_E_negative_top3 = top3
 
-    create_WordCloud('./reviews/기업고객/SHINHANbank_enterprise_review_dataset.csv', 4, 5, 'RdBu_r',
+    create_WordCloud('./reviews/기업고객/SHINHANbank_enterprise_review_dataset.csv', 4, 5, 'GnBu',
                      './wordcloud/기업고객/SHINHAN_E_WordCloud_P.png')
     SHINHAN_E_positive_top3 = top3
 
@@ -199,7 +201,7 @@ def main():
                      './wordcloud/인터넷뱅크/KAKAO_WordCloud_N.png')
     KAKAO_negative_top3 = top3
 
-    create_WordCloud('./reviews/인터넷뱅크/KAKAO_review_dataset.csv', 4, 5, 'RdBu_r',
+    create_WordCloud('./reviews/인터넷뱅크/KAKAO_review_dataset.csv', 4, 5, 'GnBu',
                      './wordcloud/인터넷뱅크/KAKAO_WordCloud_P.png')
     KAKAO_positive_top3 = top3
 
@@ -208,7 +210,7 @@ def main():
                      './wordcloud/인터넷뱅크/KBank_WordCloud_N.png')
     KBank_negative_top3 = top3
 
-    create_WordCloud('./reviews/인터넷뱅크/KBank_review_dataset.csv', 4, 5, 'RdBu_r',
+    create_WordCloud('./reviews/인터넷뱅크/KBank_review_dataset.csv', 4, 5, 'GnBu',
                      './wordcloud/인터넷뱅크/KBank_WordCloud_P.png')
     KBank_positive_top3 = top3
 
@@ -217,10 +219,9 @@ def main():
                      './wordcloud/인터넷뱅크/TOSS_WordCloud_N.png')
     TOSS_negative_top3 = top3
 
-    create_WordCloud('./reviews/인터넷뱅크/TOSS_review_dataset.csv', 4, 5, 'RdBu_r',
+    create_WordCloud('./reviews/인터넷뱅크/TOSS_review_dataset.csv', 4, 5, 'GnBu',
                      './wordcloud/인터넷뱅크/TOSS_WordCloud_P.png')
     TOSS_positive_top3 = top3
-
 
 # 은행 별 부정,긍정 워드클라우드 생성 (개인, 기업 순)
 # main()
