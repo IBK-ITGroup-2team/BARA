@@ -17,8 +17,16 @@ from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 from email import encoders
 
+import WordCloud
+# import IndividualCrawling
+
 
 def main():
+    # 워드클라우드의 main() 함수가 선행되어야함! 지금은 크롤링코드에서 실행연결 되어있음.
+    # WordCloud.TOSS_negative_top3 이런 식으로 가져와서 쓰면 됨.
+    print(WordCloud.TOSS_negative_top3)
+    print(WordCloud.TOSS_positive_top3)
+
     document = Document()
     # 스타일 적용
     style = document.styles['Normal']
@@ -97,7 +105,7 @@ def main():
     # 긍정 빈출 단어 Top3
     IBKTableCells3 = IBKTable.rows[2].cells
     IBKTableCells3[0].paragraphs[0].add_run('빈출 단어 Top3\n')
-    # IBKTableCells3[0].paragraphs[0].add_run('1. ' + IBK_positive_top3[0] + '\n')
+    IBKTableCells3[0].paragraphs[0].add_run('1. ' + WordCloud.IBK_positive_top3[0] + '\n')
     IBKTableCells3[0].paragraphs[0].add_run('2\n')
     IBKTableCells3[0].paragraphs[0].add_run('3\n')
 
@@ -597,6 +605,134 @@ def main():
 
     # 인터넷 전문 은행 앱 리뷰 현황
 
+    document.add_paragraph(' 5. 인터넷 전문 은행 모바일 앱 사용자 반응 분석')
+    document.add_paragraph('    ㅇ 토스')
+
+    # 토스 표 생성
+    TOSS1TableE = document.add_table(3, 2, grid_t_style)
+
+    TOSS1Cells1E = TOSS1TableE.rows[0].cells
+    TOSS1Cells1E[0].paragraphs[0].add_run('긍정적 반응').bold = True
+    TOSS1Cells1E[0].paragraphs[0].alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+    # WOORI1Cells1E[0].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+
+    TOSS1TableCells1E = TOSS1TableE.rows[0].cells
+    TOSS1Cells1E[1].paragraphs[0].add_run('부정적 반응').bold = True
+    TOSS1TableCells1E[1].paragraphs[0].alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+    # WOORI1TableCells1E[1].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+
+    # 표에 워드클라우드 삽입
+    TOSSCell10E = TOSS1TableE.cell(1, 0)
+    TOSSPara10E = TOSSCell10E.add_paragraph()
+    TOSSRun10E = TOSSPara10E.add_run()
+    TOSSRun10E.add_picture("./wordcloud/인터넷뱅크/TOSS_WordCloud_P.png", width=Cm(7), height=Cm(5))
+
+    TOSSCell11E = TOSS1TableE.cell(1, 1)
+    TOSSPara11E = TOSSCell11E.add_paragraph()
+    TOSSRun11E = TOSSPara11E.add_run()
+    TOSSRun11E.add_picture("./wordcloud/인터넷뱅크/TOSS_WordCloud_N.png", width=Cm(7), height=Cm(5))
+
+    # 긍정 빈출 단어 Top3
+    TOSSTableCells3E = TOSS1TableE.rows[2].cells
+    TOSSTableCells3E[0].paragraphs[0].add_run('빈출 단어 Top3\n')
+    TOSSTableCells3E[0].paragraphs[0].add_run('1\n')
+    TOSSTableCells3E[0].paragraphs[0].add_run('2\n')
+    TOSSTableCells3E[0].paragraphs[0].add_run('3\n')
+
+    # 부정 빈출 단어 Top3
+    TOSSTableCells3E[1].paragraphs[0].add_run('빈출 단어 Top3\n')
+    TOSSTableCells3E[1].paragraphs[0].add_run('1\n')
+    TOSSTableCells3E[1].paragraphs[0].add_run('2\n')
+    TOSSTableCells3E[1].paragraphs[0].add_run('3\n')
+
+    document.add_paragraph('')
+    document.add_paragraph('')
+
+    document.add_paragraph('    ㅇ 카카오뱅크')
+
+    # 카뱅 표 생성
+    KAKAO1TableE = document.add_table(3, 2, grid_t_style)
+
+    KAKAO1Cells1E = KAKAO1TableE.rows[0].cells
+    KAKAO1Cells1E[0].paragraphs[0].add_run('긍정적 반응').bold = True
+    KAKAO1Cells1E[0].paragraphs[0].alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+    # WOORI1Cells1E[0].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+
+    KAKAO1TableCells1E = KAKAO1TableE.rows[0].cells
+    KAKAO1Cells1E[1].paragraphs[0].add_run('부정적 반응').bold = True
+    KAKAO1TableCells1E[1].paragraphs[0].alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+    # WOORI1TableCells1E[1].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+
+    # 표에 워드클라우드 삽입
+    KAKAOCell10E = KAKAO1TableE.cell(1, 0)
+    KAKAOPara10E = KAKAOCell10E.add_paragraph()
+    KAKAORun10E = KAKAOPara10E.add_run()
+    KAKAORun10E.add_picture("./wordcloud/인터넷뱅크/KAKAO_WordCloud_P.png", width=Cm(7), height=Cm(5))
+
+    KAKAOCell11E = KAKAO1TableE.cell(1, 1)
+    KAKAOPara11E = KAKAOCell11E.add_paragraph()
+    KAKAORun11E = KAKAOPara11E.add_run()
+    KAKAORun11E.add_picture("./wordcloud/인터넷뱅크/KAKAO_WordCloud_N.png", width=Cm(7), height=Cm(5))
+
+    # 긍정 빈출 단어 Top3
+    KAKAOTableCells3E = KAKAO1TableE.rows[2].cells
+    KAKAOTableCells3E[0].paragraphs[0].add_run('빈출 단어 Top3\n')
+    KAKAOTableCells3E[0].paragraphs[0].add_run('1\n')
+    KAKAOTableCells3E[0].paragraphs[0].add_run('2\n')
+    KAKAOTableCells3E[0].paragraphs[0].add_run('3\n')
+
+    # 부정 빈출 단어 Top3
+    KAKAOTableCells3E[1].paragraphs[0].add_run('빈출 단어 Top3\n')
+    KAKAOTableCells3E[1].paragraphs[0].add_run('1\n')
+    KAKAOTableCells3E[1].paragraphs[0].add_run('2\n')
+    KAKAOTableCells3E[1].paragraphs[0].add_run('3\n')
+
+    document.add_paragraph('')
+    document.add_paragraph('')
+
+    # Kbank
+    document.add_paragraph('    ㅇ 케이뱅크')
+
+    # Kbank 표 생성
+    Kbank1TableE = document.add_table(3, 2, grid_t_style)
+
+    Kbank1Cells1E = Kbank1TableE.rows[0].cells
+    Kbank1Cells1E[0].paragraphs[0].add_run('긍정적 반응').bold = True
+    Kbank1Cells1E[0].paragraphs[0].alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+    # WOORI1Cells1E[0].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+
+    Kbank1TableCells1E = Kbank1TableE.rows[0].cells
+    Kbank1Cells1E[1].paragraphs[0].add_run('부정적 반응').bold = True
+    Kbank1TableCells1E[1].paragraphs[0].alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+    # WOORI1TableCells1E[1].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
+
+    # 표에 워드클라우드 삽입
+    KbankCell10E = Kbank1TableE.cell(1, 0)
+    KbankPara10E = KbankCell10E.add_paragraph()
+    KbankRun10E = KbankPara10E.add_run()
+    KbankRun10E.add_picture("./wordcloud/인터넷뱅크/Kbank_WordCloud_P.png", width=Cm(7), height=Cm(5))
+
+    KbankCell11E = Kbank1TableE.cell(1, 1)
+    KbankPara11E = KbankCell11E.add_paragraph()
+    KbankRun11E = KbankPara11E.add_run()
+    KbankRun11E.add_picture("./wordcloud/인터넷뱅크/Kbank_WordCloud_N.png", width=Cm(7), height=Cm(5))
+
+    # 긍정 빈출 단어 Top3
+    KbankTableCells3E = Kbank1TableE.rows[2].cells
+    KbankTableCells3E[0].paragraphs[0].add_run('빈출 단어 Top3\n')
+    KbankTableCells3E[0].paragraphs[0].add_run('1\n')
+    KbankTableCells3E[0].paragraphs[0].add_run('2\n')
+    KbankTableCells3E[0].paragraphs[0].add_run('3\n')
+
+    # 부정 빈출 단어 Top3
+    KbankTableCells3E[1].paragraphs[0].add_run('빈출 단어 Top3\n')
+    KbankTableCells3E[1].paragraphs[0].add_run('1\n')
+    KbankTableCells3E[1].paragraphs[0].add_run('2\n')
+    KbankTableCells3E[1].paragraphs[0].add_run('3\n')
+
+    document.add_paragraph('')
+    document.add_paragraph('')
+
     # 임시 변수!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     bestWordInternet = '부가 서비스'
     resultInternet = document.add_paragraph('')
@@ -643,7 +779,8 @@ def main():
     encoders.encode_base64(part)
     part.add_header('Content-Disposition', 'attachment', filename='report.docx')
     msg.attach(part)
+
     # 메일 전송
-    s.sendmail("IBK.ITgroup.2@gmail.com", "ghlwls111@gmail.com", msg.as_string())
+    s.sendmail("IBK.ITgroup.2@gmail.com", "bethh05108@gmail.com", msg.as_string())
     # 세션 종료
     s.quit()

@@ -9,6 +9,37 @@ okt = Okt()
 global SW
 global c
 
+global HANA_positive_top3
+global HANA_negative_top3
+global HANA_E_negative_top3
+global HANA_E_positive_top3
+global IBK_negative_top3
+global IBK_positive_top3
+global IBK_E_negative_top3
+global IBK_E_positive_top3
+global KB_negative_top3
+global KB_positive_top3
+global KB_E_negative_top3
+global KB_E_positive_top3
+global NH_negative_top3
+global NH_positive_top3
+global NH_E_negative_top3
+global NH_E_positive_top3
+global WOORI_negative_top3
+global WOORI_positive_top3
+global WOORI_E_negative_top3
+global WOORI_E_positive_top3
+global SHINHAN_negative_top3
+global SHINHAN_positive_top3
+global SHINHAN_E_negative_top3
+global SHINHAN_E_positive_top3
+global KAKAO_negative_top3
+global KAKAO_positive_top3
+global KBank_negative_top3
+global KBank_positive_top3
+global TOSS_negative_top3
+global TOSS_positive_top3
+
 
 def text_cleaning(doc):
     # 한국어와 띄어쓰기를 제외한 글자를 제거
@@ -89,6 +120,37 @@ def create_WordCloud(path, rate1, rate2, colormap, savepath):
 
 
 def main():
+    global HANA_positive_top3
+    global HANA_negative_top3
+    global HANA_E_negative_top3
+    global HANA_E_positive_top3
+    global IBK_negative_top3
+    global IBK_positive_top3
+    global IBK_E_negative_top3
+    global IBK_E_positive_top3
+    global KB_negative_top3
+    global KB_positive_top3
+    global KB_E_negative_top3
+    global KB_E_positive_top3
+    global NH_negative_top3
+    global NH_positive_top3
+    global NH_E_negative_top3
+    global NH_E_positive_top3
+    global WOORI_negative_top3
+    global WOORI_positive_top3
+    global WOORI_E_negative_top3
+    global WOORI_E_positive_top3
+    global SHINHAN_negative_top3
+    global SHINHAN_positive_top3
+    global SHINHAN_E_negative_top3
+    global SHINHAN_E_positive_top3
+    global KAKAO_negative_top3
+    global KAKAO_positive_top3
+    global KBank_negative_top3
+    global KBank_positive_top3
+    global TOSS_negative_top3
+    global TOSS_positive_top3
+
     # 하나은행 (개인)
     create_WordCloud('./reviews/개인고객/HANAreview_dataset.csv', 1, 2, 'Oranges_r',
                      './wordcloud/개인고객/HANA_WordCloud_N.png')
