@@ -17,6 +17,7 @@ from apscheduler.jobstores.base import JobLookupError
 import time
 import EnterpriseCrawling
 import WordCloud
+import TopicModeling
 import ReportDocx
 
 #IBK, 하나, 국민, 농협, 신한, 우리, 카카오뱅크, 토스, 케이뱅크
@@ -191,6 +192,9 @@ def main():
 
     # 워드클라우드 코드 연결
     WordCloud.main()
+
+    # 토픽모델링 코드 연결 (오래걸려서 실행X, csv파일 추출해둠)
+    # TopicModeling.main()
 
     # 보고서 코드 연결
     ReportDocx.main()
