@@ -106,14 +106,14 @@ def main():
     IBKTableCells3 = IBKTable.rows[2].cells
     IBKTableCells3[0].paragraphs[0].add_run('빈출 단어 Top3\n')
     IBKTableCells3[0].paragraphs[0].add_run('1. ' + WordCloud.IBK_positive_top3[0] + '\n')
-    IBKTableCells3[0].paragraphs[0].add_run('2\n')
-    IBKTableCells3[0].paragraphs[0].add_run('3\n')
+    IBKTableCells3[0].paragraphs[0].add_run('2. ' + WordCloud.IBK_positive_top3[1] + '\n')
+    IBKTableCells3[0].paragraphs[0].add_run('3. ' + WordCloud.IBK_positive_top3[2] + '\n')
 
     # 부정 빈출 단어 Top3
     IBKTableCells3[1].paragraphs[0].add_run('빈출 단어 Top3\n')
-    IBKTableCells3[1].paragraphs[0].add_run('1\n')
-    IBKTableCells3[1].paragraphs[0].add_run('2\n')
-    IBKTableCells3[1].paragraphs[0].add_run('3\n')
+    IBKTableCells3[1].paragraphs[0].add_run('1. '+ WordCloud.IBK_negative_top3[0]+'\n')
+    IBKTableCells3[1].paragraphs[0].add_run('2. '+WordCloud.IBK_negative_top3[1]+'\n')
+    IBKTableCells3[1].paragraphs[0].add_run('3. '+WordCloud.IBK_negative_top3[2]+'\n')
 
     document.add_paragraph('')
 
@@ -148,15 +148,15 @@ def main():
     # 긍정 빈출 단어 Top3
     HANATableCells3 = HANA1Table.rows[2].cells
     HANATableCells3[0].paragraphs[0].add_run('빈출 단어 Top3\n')
-    HANATableCells3[0].paragraphs[0].add_run('1\n')
-    HANATableCells3[0].paragraphs[0].add_run('2\n')
-    HANATableCells3[0].paragraphs[0].add_run('3\n')
+    HANATableCells3[0].paragraphs[0].add_run('1. '+WordCloud.HANA_positive_top3[0]+'\n')
+    HANATableCells3[0].paragraphs[0].add_run('2. '+WordCloud.HANA_positive_top3[1]+'\n')
+    HANATableCells3[0].paragraphs[0].add_run('3. '+WordCloud.HANA_positive_top3[2]+'\n')
 
     # 부정 빈출 단어 Top3
     HANATableCells3[1].paragraphs[0].add_run('빈출 단어 Top3\n')
-    HANATableCells3[1].paragraphs[0].add_run('1\n')
-    HANATableCells3[1].paragraphs[0].add_run('2\n')
-    HANATableCells3[1].paragraphs[0].add_run('3\n')
+    HANATableCells3[1].paragraphs[0].add_run('1. '+WordCloud.HANA_negative_top3[0]+'\n')
+    HANATableCells3[1].paragraphs[0].add_run('2. '+WordCloud.HANA_negative_top3[1]+'\n')
+    HANATableCells3[1].paragraphs[0].add_run('3. '+WordCloud.HANA_negative_top3[2]+'\n')
 
     document.add_paragraph('')
     document.add_paragraph('')
@@ -191,15 +191,15 @@ def main():
     # 긍정 빈출 단어 Top3
     KBTableCells3 = KB1Table.rows[2].cells
     KBTableCells3[0].paragraphs[0].add_run('빈출 단어 Top3\n')
-    KBTableCells3[0].paragraphs[0].add_run('1\n')
-    KBTableCells3[0].paragraphs[0].add_run('2\n')
-    KBTableCells3[0].paragraphs[0].add_run('3\n')
+    KBTableCells3[0].paragraphs[0].add_run('1. '+WordCloud.KB_positive_top3[0]+'\n')
+    KBTableCells3[0].paragraphs[0].add_run('2. '+WordCloud.KB_positive_top3[1]+'\n')
+    KBTableCells3[0].paragraphs[0].add_run('3. '+WordCloud.KB_positive_top3[2]+'\n')
 
     # 부정 빈출 단어 Top3
     KBTableCells3[1].paragraphs[0].add_run('빈출 단어 Top3\n')
-    KBTableCells3[1].paragraphs[0].add_run('1\n')
-    KBTableCells3[1].paragraphs[0].add_run('2\n')
-    KBTableCells3[1].paragraphs[0].add_run('3\n')
+    KBTableCells3[1].paragraphs[0].add_run('1. '+WordCloud.KB_negative_top3[0]+'\n')
+    KBTableCells3[1].paragraphs[0].add_run('2. '+WordCloud.KB_negative_top3[1]+'\n')
+    KBTableCells3[1].paragraphs[0].add_run('3. '+WordCloud.KB_negative_top3[2]+'\n')
 
     document.add_paragraph('')
     document.add_paragraph('')
@@ -234,15 +234,15 @@ def main():
     # 긍정 빈출 단어 Top3
     SHTableCells3 = SH1Table.rows[2].cells
     SHTableCells3[0].paragraphs[0].add_run('빈출 단어 Top3\n')
-    SHTableCells3[0].paragraphs[0].add_run('1\n')
-    SHTableCells3[0].paragraphs[0].add_run('2\n')
-    SHTableCells3[0].paragraphs[0].add_run('3\n')
+    SHTableCells3[0].paragraphs[0].add_run('1. '+WordCloud.SHINHAN_positive_top3[0]+'\n')
+    SHTableCells3[0].paragraphs[0].add_run('2. '+WordCloud.SHINHAN_positive_top3[1]+'\n')
+    SHTableCells3[0].paragraphs[0].add_run('3. '+WordCloud.SHINHAN_positive_top3[2]+'\n')
 
     # 부정 빈출 단어 Top3
     SHTableCells3[1].paragraphs[0].add_run('빈출 단어 Top3\n')
-    SHTableCells3[1].paragraphs[0].add_run('1\n')
-    SHTableCells3[1].paragraphs[0].add_run('2\n')
-    SHTableCells3[1].paragraphs[0].add_run('3\n')
+    SHTableCells3[1].paragraphs[0].add_run('1. '+WordCloud.SHINHAN_negative_top3[0]+'\n')
+    SHTableCells3[1].paragraphs[0].add_run('2. '+WordCloud.SHINHAN_negative_top3[1]+'\n')
+    SHTableCells3[1].paragraphs[0].add_run('3. '+WordCloud.SHINHAN_negative_top3[2]+'\n')
 
     for i in range(3):
         document.add_paragraph('')
@@ -277,15 +277,15 @@ def main():
     # 긍정 빈출 단어 Top3
     NHTableCells3 = NH1Table.rows[2].cells
     NHTableCells3[0].paragraphs[0].add_run('빈출 단어 Top3\n')
-    NHTableCells3[0].paragraphs[0].add_run('1\n')
-    NHTableCells3[0].paragraphs[0].add_run('2\n')
-    NHTableCells3[0].paragraphs[0].add_run('3\n')
+    NHTableCells3[0].paragraphs[0].add_run('1. '+WordCloud.NH_positive_top3[0]+'\n')
+    NHTableCells3[0].paragraphs[0].add_run('2. '+WordCloud.NH_positive_top3[1]+'\n')
+    NHTableCells3[0].paragraphs[0].add_run('3. '+WordCloud.NH_positive_top3[2]+'\n')
 
     # 부정 빈출 단어 Top3
     NHTableCells3[1].paragraphs[0].add_run('빈출 단어 Top3\n')
-    NHTableCells3[1].paragraphs[0].add_run('1\n')
-    NHTableCells3[1].paragraphs[0].add_run('2\n')
-    NHTableCells3[1].paragraphs[0].add_run('3\n')
+    NHTableCells3[1].paragraphs[0].add_run('1. '+WordCloud.NH_negative_top3[0]+'\n')
+    NHTableCells3[1].paragraphs[0].add_run('2. '+WordCloud.NH_negative_top3[1]+'\n')
+    NHTableCells3[1].paragraphs[0].add_run('3. '+WordCloud.NH_negative_top3[2]+'\n')
 
     document.add_paragraph('')
     document.add_paragraph('')
@@ -320,15 +320,15 @@ def main():
     # 긍정 빈출 단어 Top3
     WOORITableCells3 = WOORI1Table.rows[2].cells
     WOORITableCells3[0].paragraphs[0].add_run('빈출 단어 Top3\n')
-    WOORITableCells3[0].paragraphs[0].add_run('1\n')
-    WOORITableCells3[0].paragraphs[0].add_run('2\n')
-    WOORITableCells3[0].paragraphs[0].add_run('3\n')
+    WOORITableCells3[0].paragraphs[0].add_run('1. '+WordCloud.WOORI_positive_top3[0]+'\n')
+    WOORITableCells3[0].paragraphs[0].add_run('2. '+WordCloud.WOORI_positive_top3[1]+'\n')
+    WOORITableCells3[0].paragraphs[0].add_run('3. '+WordCloud.WOORI_positive_top3[2]+'\n')
 
     # 부정 빈출 단어 Top3
     WOORITableCells3[1].paragraphs[0].add_run('빈출 단어 Top3\n')
-    WOORITableCells3[1].paragraphs[0].add_run('1\n')
-    WOORITableCells3[1].paragraphs[0].add_run('2\n')
-    WOORITableCells3[1].paragraphs[0].add_run('3\n')
+    WOORITableCells3[1].paragraphs[0].add_run('1. '+WordCloud.WOORI_negative_top3[0]+'\n')
+    WOORITableCells3[1].paragraphs[0].add_run('2. '+WordCloud.WOORI_negative_top3[1]+'\n')
+    WOORITableCells3[1].paragraphs[0].add_run('3. '+WordCloud.WOORI_negative_top3[2]+'\n')
 
     document.add_paragraph('')
 
@@ -343,7 +343,7 @@ def main():
 
     IBKTableE = document.add_table(3, 2, grid_t_style)
 
-    IBKTableECells1 = IBKTable.rows[0].cells
+    IBKTableECells1 = IBKTableE.rows[0].cells
     IBKTableECells1[0].paragraphs[0].add_run('긍정적 반응').bold = True
     IBKTableECells1[0].paragraphs[0].alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
     # IBKTableECells1[0].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -367,15 +367,15 @@ def main():
     # 긍정 빈출 단어 Top3
     IBKTableECells3 = IBKTableE.rows[2].cells
     IBKTableECells3[0].paragraphs[0].add_run('빈출 단어 Top3\n')
-    IBKTableECells3[0].paragraphs[0].add_run('1\n')
-    IBKTableECells3[0].paragraphs[0].add_run('2\n')
-    IBKTableECells3[0].paragraphs[0].add_run('3\n')
+    IBKTableECells3[0].paragraphs[0].add_run('1. '+WordCloud.IBK_E_positive_top3[0]+'\n')
+    IBKTableECells3[0].paragraphs[0].add_run('2. '+WordCloud.IBK_E_positive_top3[1]+'\n')
+    IBKTableECells3[0].paragraphs[0].add_run('3. '+WordCloud.IBK_E_positive_top3[2]+'\n')
 
     # 부정 빈출 단어 Top3
     IBKTableECells3[1].paragraphs[0].add_run('빈출 단어 Top3\n')
-    IBKTableECells3[1].paragraphs[0].add_run('1\n')
-    IBKTableECells3[1].paragraphs[0].add_run('2\n')
-    IBKTableECells3[1].paragraphs[0].add_run('3\n')
+    IBKTableECells3[1].paragraphs[0].add_run('1. '+WordCloud.IBK_E_negative_top3[0]+'\n')
+    IBKTableECells3[1].paragraphs[0].add_run('2. '+WordCloud.IBK_E_negative_top3[1]+'\n')
+    IBKTableECells3[1].paragraphs[0].add_run('3. '+WordCloud.IBK_E_negative_top3[2]+'\n')
 
     document.add_paragraph('')
 
@@ -411,15 +411,15 @@ def main():
     # 긍정 빈출 단어 Top3
     HANATableCells3E = HANA1TableE.rows[2].cells
     HANATableCells3E[0].paragraphs[0].add_run('빈출 단어 Top3\n')
-    HANATableCells3E[0].paragraphs[0].add_run('1\n')
-    HANATableCells3E[0].paragraphs[0].add_run('2\n')
-    HANATableCells3E[0].paragraphs[0].add_run('3\n')
+    HANATableCells3E[0].paragraphs[0].add_run('1. '+WordCloud.HANA_E_positive_top3[0]+'\n')
+    HANATableCells3E[0].paragraphs[0].add_run('2. '+WordCloud.HANA_E_positive_top3[1]+'\n')
+    HANATableCells3E[0].paragraphs[0].add_run('3. '+WordCloud.HANA_E_positive_top3[2]+'\n')
 
     # 부정 빈출 단어 Top3
     HANATableCells3E[1].paragraphs[0].add_run('빈출 단어 Top3\n')
-    HANATableCells3E[1].paragraphs[0].add_run('1\n')
-    HANATableCells3E[1].paragraphs[0].add_run('2\n')
-    HANATableCells3E[1].paragraphs[0].add_run('3\n')
+    HANATableCells3E[1].paragraphs[0].add_run('1. '+WordCloud.HANA_E_negative_top3[0]+'\n')
+    HANATableCells3E[1].paragraphs[0].add_run('2. '+WordCloud.HANA_E_negative_top3[1]+'\n')
+    HANATableCells3E[1].paragraphs[0].add_run('3. '+WordCloud.HANA_E_negative_top3[2]+'\n')
 
     document.add_paragraph('')
     document.add_paragraph('')
@@ -454,15 +454,15 @@ def main():
     # 긍정 빈출 단어 Top3
     KBTableCells3E = KB1TableE.rows[2].cells
     KBTableCells3E[0].paragraphs[0].add_run('빈출 단어 Top3\n')
-    KBTableCells3E[0].paragraphs[0].add_run('1\n')
-    KBTableCells3E[0].paragraphs[0].add_run('2\n')
-    KBTableCells3E[0].paragraphs[0].add_run('3\n')
+    KBTableCells3E[0].paragraphs[0].add_run('1. '+WordCloud.KB_E_positive_top3[0]+'\n')
+    KBTableCells3E[0].paragraphs[0].add_run('2. '+WordCloud.KB_E_positive_top3[1]+'\n')
+    KBTableCells3E[0].paragraphs[0].add_run('3. '+WordCloud.KB_E_positive_top3[2]+'\n')
 
     # 부정 빈출 단어 Top3
     KBTableCells3E[1].paragraphs[0].add_run('빈출 단어 Top3\n')
-    KBTableCells3E[1].paragraphs[0].add_run('1\n')
-    KBTableCells3E[1].paragraphs[0].add_run('2\n')
-    KBTableCells3E[1].paragraphs[0].add_run('3\n')
+    KBTableCells3E[1].paragraphs[0].add_run('1. '+WordCloud.KB_E_negative_top3[0]+'\n')
+    KBTableCells3E[1].paragraphs[0].add_run('2. '+WordCloud.KB_E_negative_top3[1]+'\n')
+    KBTableCells3E[1].paragraphs[0].add_run('3. '+WordCloud.KB_E_negative_top3[2]+'\n')
 
     document.add_paragraph('')
     document.add_paragraph('')
@@ -497,15 +497,15 @@ def main():
     # 긍정 빈출 단어 Top3
     SHTableCells3E = SH1TableE.rows[2].cells
     SHTableCells3E[0].paragraphs[0].add_run('빈출 단어 Top3\n')
-    SHTableCells3E[0].paragraphs[0].add_run('1\n')
-    SHTableCells3E[0].paragraphs[0].add_run('2\n')
-    SHTableCells3E[0].paragraphs[0].add_run('3\n')
+    SHTableCells3E[0].paragraphs[0].add_run('1. '+WordCloud.SHINHAN_E_positive_top3[0]+'\n')
+    SHTableCells3E[0].paragraphs[0].add_run('2. '+WordCloud.SHINHAN_E_positive_top3[1]+'\n')
+    SHTableCells3E[0].paragraphs[0].add_run('3. '+WordCloud.SHINHAN_E_positive_top3[2]+'\n')
 
     # 부정 빈출 단어 Top3
     SHTableCells3E[1].paragraphs[0].add_run('빈출 단어 Top3\n')
-    SHTableCells3E[1].paragraphs[0].add_run('1\n')
-    SHTableCells3E[1].paragraphs[0].add_run('2\n')
-    SHTableCells3E[1].paragraphs[0].add_run('3\n')
+    SHTableCells3E[1].paragraphs[0].add_run('1. '+WordCloud.SHINHAN_E_negative_top3[0]+'\n')
+    SHTableCells3E[1].paragraphs[0].add_run('2. '+WordCloud.SHINHAN_E_negative_top3[1]+'\n')
+    SHTableCells3E[1].paragraphs[0].add_run('3. '+WordCloud.SHINHAN_E_negative_top3[2]+'\n')
 
     document.add_paragraph('')
     document.add_paragraph('')
@@ -541,15 +541,15 @@ def main():
     # 긍정 빈출 단어 Top3
     NHTableCells3E = NH1TableE.rows[2].cells
     NHTableCells3E[0].paragraphs[0].add_run('빈출 단어 Top3\n')
-    NHTableCells3E[0].paragraphs[0].add_run('1\n')
-    NHTableCells3E[0].paragraphs[0].add_run('2\n')
-    NHTableCells3E[0].paragraphs[0].add_run('3\n')
+    NHTableCells3E[0].paragraphs[0].add_run('1. '+WordCloud.NH_E_positive_top3[0]+'\n')
+    NHTableCells3E[0].paragraphs[0].add_run('2. '+WordCloud.NH_E_positive_top3[1]+'\n')
+    NHTableCells3E[0].paragraphs[0].add_run('3. '+WordCloud.NH_E_positive_top3[2]+'\n')
 
     # 부정 빈출 단어 Top3
     NHTableCells3E[1].paragraphs[0].add_run('빈출 단어 Top3\n')
-    NHTableCells3E[1].paragraphs[0].add_run('1\n')
-    NHTableCells3E[1].paragraphs[0].add_run('2\n')
-    NHTableCells3E[1].paragraphs[0].add_run('3\n')
+    NHTableCells3E[1].paragraphs[0].add_run('1. '+WordCloud.NH_E_negative_top3[0]+'\n')
+    NHTableCells3E[1].paragraphs[0].add_run('2. '+WordCloud.NH_E_negative_top3[1]+'\n')
+    NHTableCells3E[1].paragraphs[0].add_run('3. '+WordCloud.NH_E_negative_top3[2]+'\n')
 
     document.add_paragraph('')
     document.add_paragraph('')
@@ -584,15 +584,15 @@ def main():
     # 긍정 빈출 단어 Top3
     WOORITableCells3E = WOORI1TableE.rows[2].cells
     WOORITableCells3E[0].paragraphs[0].add_run('빈출 단어 Top3\n')
-    WOORITableCells3E[0].paragraphs[0].add_run('1\n')
-    WOORITableCells3E[0].paragraphs[0].add_run('2\n')
-    WOORITableCells3E[0].paragraphs[0].add_run('3\n')
+    WOORITableCells3E[0].paragraphs[0].add_run('1. '+WordCloud.WOORI_E_positive_top3[0]+'\n')
+    WOORITableCells3E[0].paragraphs[0].add_run('2. '+WordCloud.WOORI_E_positive_top3[1]+'\n')
+    WOORITableCells3E[0].paragraphs[0].add_run('3. '+WordCloud.WOORI_E_positive_top3[2]+'\n')
 
     # 부정 빈출 단어 Top3
     WOORITableCells3E[1].paragraphs[0].add_run('빈출 단어 Top3\n')
-    WOORITableCells3E[1].paragraphs[0].add_run('1\n')
-    WOORITableCells3E[1].paragraphs[0].add_run('2\n')
-    WOORITableCells3E[1].paragraphs[0].add_run('3\n')
+    WOORITableCells3E[1].paragraphs[0].add_run('1. '+WordCloud.WOORI_E_negative_top3[0]+'\n')
+    WOORITableCells3E[1].paragraphs[0].add_run('2. '+WordCloud.WOORI_E_negative_top3[1]+'\n')
+    WOORITableCells3E[1].paragraphs[0].add_run('3. '+WordCloud.WOORI_E_negative_top3[2]+'\n')
 
     document.add_paragraph('')
     document.add_paragraph('')
@@ -635,15 +635,15 @@ def main():
     # 긍정 빈출 단어 Top3
     TOSSTableCells3E = TOSS1TableE.rows[2].cells
     TOSSTableCells3E[0].paragraphs[0].add_run('빈출 단어 Top3\n')
-    TOSSTableCells3E[0].paragraphs[0].add_run('1\n')
-    TOSSTableCells3E[0].paragraphs[0].add_run('2\n')
-    TOSSTableCells3E[0].paragraphs[0].add_run('3\n')
+    TOSSTableCells3E[0].paragraphs[0].add_run('1. '+WordCloud.TOSS_positive_top3[0]+'\n')
+    TOSSTableCells3E[0].paragraphs[0].add_run('2. '+WordCloud.TOSS_positive_top3[1]+'\n')
+    TOSSTableCells3E[0].paragraphs[0].add_run('3. '+WordCloud.TOSS_positive_top3[2]+'\n')
 
     # 부정 빈출 단어 Top3
     TOSSTableCells3E[1].paragraphs[0].add_run('빈출 단어 Top3\n')
-    TOSSTableCells3E[1].paragraphs[0].add_run('1\n')
-    TOSSTableCells3E[1].paragraphs[0].add_run('2\n')
-    TOSSTableCells3E[1].paragraphs[0].add_run('3\n')
+    TOSSTableCells3E[1].paragraphs[0].add_run('1. '+WordCloud.TOSS_negative_top3[0]+'\n')
+    TOSSTableCells3E[1].paragraphs[0].add_run('2. '+WordCloud.TOSS_negative_top3[1]+'\n')
+    TOSSTableCells3E[1].paragraphs[0].add_run('3. '+WordCloud.TOSS_negative_top3[2]+'\n')
 
     document.add_paragraph('')
     document.add_paragraph('')
@@ -677,15 +677,15 @@ def main():
     # 긍정 빈출 단어 Top3
     KAKAOTableCells3E = KAKAO1TableE.rows[2].cells
     KAKAOTableCells3E[0].paragraphs[0].add_run('빈출 단어 Top3\n')
-    KAKAOTableCells3E[0].paragraphs[0].add_run('1\n')
-    KAKAOTableCells3E[0].paragraphs[0].add_run('2\n')
-    KAKAOTableCells3E[0].paragraphs[0].add_run('3\n')
+    KAKAOTableCells3E[0].paragraphs[0].add_run('1. '+WordCloud.KAKAO_positive_top3[0]+'\n')
+    KAKAOTableCells3E[0].paragraphs[0].add_run('2. '+WordCloud.KAKAO_positive_top3[1]+'\n')
+    KAKAOTableCells3E[0].paragraphs[0].add_run('3. '+WordCloud.KAKAO_positive_top3[2]+'\n')
 
     # 부정 빈출 단어 Top3
     KAKAOTableCells3E[1].paragraphs[0].add_run('빈출 단어 Top3\n')
-    KAKAOTableCells3E[1].paragraphs[0].add_run('1\n')
-    KAKAOTableCells3E[1].paragraphs[0].add_run('2\n')
-    KAKAOTableCells3E[1].paragraphs[0].add_run('3\n')
+    KAKAOTableCells3E[1].paragraphs[0].add_run('1. '+WordCloud.KAKAO_negative_top3[0]+'\n')
+    KAKAOTableCells3E[1].paragraphs[0].add_run('2. '+WordCloud.KAKAO_negative_top3[1]+'\n')
+    KAKAOTableCells3E[1].paragraphs[0].add_run('3. '+WordCloud.KAKAO_negative_top3[2]+'\n')
 
     document.add_paragraph('')
     document.add_paragraph('')
@@ -720,15 +720,15 @@ def main():
     # 긍정 빈출 단어 Top3
     KbankTableCells3E = Kbank1TableE.rows[2].cells
     KbankTableCells3E[0].paragraphs[0].add_run('빈출 단어 Top3\n')
-    KbankTableCells3E[0].paragraphs[0].add_run('1\n')
-    KbankTableCells3E[0].paragraphs[0].add_run('2\n')
-    KbankTableCells3E[0].paragraphs[0].add_run('3\n')
+    KbankTableCells3E[0].paragraphs[0].add_run('1. '+WordCloud.KBank_positive_top3[0]+'\n')
+    KbankTableCells3E[0].paragraphs[0].add_run('2. '+WordCloud.KBank_positive_top3[1]+'\n')
+    KbankTableCells3E[0].paragraphs[0].add_run('3. '+WordCloud.KBank_positive_top3[2]+'\n')
 
     # 부정 빈출 단어 Top3
     KbankTableCells3E[1].paragraphs[0].add_run('빈출 단어 Top3\n')
-    KbankTableCells3E[1].paragraphs[0].add_run('1\n')
-    KbankTableCells3E[1].paragraphs[0].add_run('2\n')
-    KbankTableCells3E[1].paragraphs[0].add_run('3\n')
+    KbankTableCells3E[1].paragraphs[0].add_run('1. '+WordCloud.KBank_negative_top3[0]+'\n')
+    KbankTableCells3E[1].paragraphs[0].add_run('2. '+WordCloud.KBank_negative_top3[1]+'\n')
+    KbankTableCells3E[1].paragraphs[0].add_run('3. '+WordCloud.KBank_negative_top3[2]+'\n')
 
     document.add_paragraph('')
     document.add_paragraph('')
