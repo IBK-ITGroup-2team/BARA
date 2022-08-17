@@ -1,0 +1,41 @@
+
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/bmabey/pyLDAvis@3.3.1/pyLDAvis/js/ldavis.v1.0.0.css">
+
+
+<div id="ldavis_el1260020607089534406174665772"></div>
+<script type="text/javascript">
+
+var ldavis_el1260020607089534406174665772_data = {"mdsDat": {"x": [-0.09414139466032945, -3.177041739669467e-07, 0.09414171236450336], "y": [-0.0, -0.0, -0.0], "topics": [1, 2, 3], "cluster": [1, 1, 1], "Freq": [41.32730475041143, 17.34588819798327, 41.3268070516053]}, "tinfo": {"Term": ["\uc218\uc815", "\uc774\uccb4", "\uc774\uccb4", "\uc218\uc815", "\uc774\uccb4", "\uc218\uc815", "\uc218\uc815", "\uc774\uccb4"], "Freq": [0.0, 1.0, 0.6585568852927048, 0.16798916044953782, 0.17345999083271124, 0.1734577369406125, 0.6585495455712413, 0.16798655851181987], "Total": [0.0, 1.0, 1.000003434637236, 0.9999964429613917, 1.000003434637236, 0.9999964429613917, 0.9999964429613917, 1.000003434637236], "Category": ["Default", "Default", "Topic1", "Topic1", "Topic2", "Topic2", "Topic3", "Topic3"], "logprob": [2.0, 1.0, -0.2272, -1.5934, -0.6931, -0.6932, -0.2272, -1.5934], "loglift": [2.0, 1.0, 0.4659, -0.9002, 0.0, -0.0, 0.4659, -0.9002]}, "token.table": {"Topic": [3, 1], "Freq": [1.0000035570512609, 0.9999965653745607], "Term": ["\uc218\uc815", "\uc774\uccb4"]}, "R": 2, "lambda.step": 0.01, "plot.opts": {"xlab": "PC1", "ylab": "PC2"}, "topic.order": [1, 2, 3]};
+
+function LDAvis_load_lib(url, callback){
+  var s = document.createElement('script');
+  s.src = url;
+  s.async = true;
+  s.onreadystatechange = s.onload = callback;
+  s.onerror = function(){console.warn("failed to load library " + url);};
+  document.getElementsByTagName("head")[0].appendChild(s);
+}
+
+if(typeof(LDAvis) !== "undefined"){
+   // already loaded: just create the visualization
+   !function(LDAvis){
+       new LDAvis("#" + "ldavis_el1260020607089534406174665772", ldavis_el1260020607089534406174665772_data);
+   }(LDAvis);
+}else if(typeof define === "function" && define.amd){
+   // require.js is available: use it to load d3/LDAvis
+   require.config({paths: {d3: "https://d3js.org/d3.v5"}});
+   require(["d3"], function(d3){
+      window.d3 = d3;
+      LDAvis_load_lib("https://cdn.jsdelivr.net/gh/bmabey/pyLDAvis@3.3.1/pyLDAvis/js/ldavis.v3.0.0.js", function(){
+        new LDAvis("#" + "ldavis_el1260020607089534406174665772", ldavis_el1260020607089534406174665772_data);
+      });
+    });
+}else{
+    // require.js not available: dynamically load d3 & LDAvis
+    LDAvis_load_lib("https://d3js.org/d3.v5.js", function(){
+         LDAvis_load_lib("https://cdn.jsdelivr.net/gh/bmabey/pyLDAvis@3.3.1/pyLDAvis/js/ldavis.v3.0.0.js", function(){
+                 new LDAvis("#" + "ldavis_el1260020607089534406174665772", ldavis_el1260020607089534406174665772_data);
+            })
+         });
+}
+</script>
