@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from collections import Counter
 import pandas as pd
 import re
+from hanspell import spell_checker
 from konlpy.tag import Okt
 
 okt = Okt()
@@ -93,6 +94,13 @@ def create_WordCloud(path, rate1, rate2, colormap, savepath):
     for t in cat:
         text += (okt.normalize(t) + ". ")
     print(text)
+    # for t in cat:
+    #     result = text_cleaning(t)
+    #     result = spell_checker.check([result])
+    #     t = result[0].checked
+    #     print(t)
+    #     text += (okt.normalize(t) + ". ")
+    # print(text)
     # print(okt.pos(text, norm=True, stem=True))
 
     SW = define_stopwords("./stopwords/stopwords-ko.txt")
