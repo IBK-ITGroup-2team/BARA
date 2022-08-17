@@ -1,3 +1,4 @@
+from mimetypes import encodings_map
 from msilib.schema import MIME
 from telnetlib import DO
 from docx import Document
@@ -17,6 +18,8 @@ from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 from email import encoders
 
+import csv
+
 import WordCloud
 # import IndividualCrawling
 
@@ -24,9 +27,63 @@ import WordCloud
 def main():
     # 워드클라우드의 main() 함수가 선행되어야함! 지금은 크롤링코드에서 실행연결 되어있음.
     # WordCloud.TOSS_negative_top3 이런 식으로 가져와서 쓰면 됨.
-    print(WordCloud.TOSS_negative_top3)
-    print(WordCloud.TOSS_positive_top3)
+    #print(WordCloud.TOSS_negative_top3)
+    #print(WordCloud.TOSS_positive_top3)
 
+    # best 은행 선정
+    
+    # 개인 고객용 어플
+    starListIndividual=[]
+    
+    # 하나 은행
+    fHANA=open('./reviews/별점/HANAreview_rating.csv','r',encoding='utf-8')
+    rdrHANA=csv.reader(fHANA)
+    for line in rdrHANA:
+        starListIndividual.append(line[1])
+    fHANA.close()
+
+    # KB
+    fKB=open('./reviews/별점/KBreview_rating.csv','r',encoding='utf-8')
+    rdrKB=csv.reader(fKB)
+    for line in rdrKB:
+        starListIndividual.append(line[1])
+    fKB.close()     
+    
+    # WOORI
+    fWOORI=open('./reviews/별점/WONreview_rating.csv','r',encoding='utf-8')
+    rdrWOORI=csv.reader(fWOORI)
+    for line in rdrWOORI:
+        starListIndividual.append(line[1])
+    fWOORI.close()  
+    
+    # NH
+    fNH=open('./reviews/별점/NHreview_rating.csv','r',encoding='utf-8')
+    rdrNH=csv.reader(fNH)
+    for line in rdrNH:
+        starListIndividual.append(line[1])
+    fNH.close() 
+    
+    # SHINHAN
+    fSH=open('./reviews/별점/신한review_rating.csv','r',encoding='utf-8')
+    rdrSH=csv.reader(fSH)
+    for line in rdrSH:
+        starListIndividual.append(line[1])
+    fSH.close()
+    
+    bestScoreI=max(starListIndividual)
+    
+    indexI=starListIndividual.index(bestScoreI)
+    if indexI == 2:
+        bestWordI=WordCloud.HANA_positive_top3[0]
+    elif indexI == 4:
+        bestWordI=WordCloud.KB_positive_top3[0]
+    elif indexI == 6:
+        bestWordI=WordCloud.WOORI_positive_top3[0]
+    elif indexI ==8:
+        bestWordI=WordCloud.NH_positive_top3[0]
+    else:
+        bestWordI=WordCloud.SHINHAN_positive_top3[0]
+        
     document = Document()
     # 스타일 적용
     style = document.styles['Normal']
@@ -333,10 +390,10 @@ def main():
     document.add_paragraph('')
 
     # 임시 변수 !!!!!!!!!!!!!!!!!!!!!! 나중에 지우기
-    bestWord = 'UI 개선'
+    #bestWord = 'UI 개선'
     resultPersonal = document.add_paragraph('best 은행: ' + '\n')
     resultPersonal.add_run('결 론           ').bold = True
-    resultPersonal.add_run(bestWord + '에 힘쓰는 것이 좋겠다고 판단됨.')
+    resultPersonal.add_run(bestWordI + '에 힘쓰는 것이 좋겠다고 판단됨.')
 
     # 당행 기업 앱 리뷰 현황
     document.add_paragraph(' 3. 당행 기업고객용 모바일 앱 (i-one bank) 사용자 반응 분석')
