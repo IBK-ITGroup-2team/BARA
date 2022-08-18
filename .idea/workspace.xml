@@ -4,41 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71cff64c-3815-43ee-806c-c19e4ee1702f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WordCloud.py" beforeDir="false" afterPath="$PROJECT_DIR$/WordCloud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stopwords/stopwords-ko.txt" beforeDir="false" afterPath="$PROJECT_DIR$/stopwords/stopwords-ko.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/개인고객/HANA_WordCloud_N.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/개인고객/HANA_WordCloud_N.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/개인고객/HANA_WordCloud_P.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/개인고객/HANA_WordCloud_P.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/개인고객/IBK_WordCloud_N.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/개인고객/IBK_WordCloud_N.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/개인고객/IBK_WordCloud_P.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/개인고객/IBK_WordCloud_P.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/개인고객/KB_WordCloud_N.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/개인고객/KB_WordCloud_N.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/개인고객/KB_WordCloud_P.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/개인고객/KB_WordCloud_P.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/개인고객/NH_WordCloud_N.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/개인고객/NH_WordCloud_N.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/개인고객/NH_WordCloud_P.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/개인고객/NH_WordCloud_P.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/개인고객/SHINHAN_WordCloud_N.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/개인고객/SHINHAN_WordCloud_N.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/개인고객/SHINHAN_WordCloud_P.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/개인고객/SHINHAN_WordCloud_P.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/개인고객/WOORI_WordCloud_N.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/개인고객/WOORI_WordCloud_N.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/개인고객/WOORI_WordCloud_P.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/개인고객/WOORI_WordCloud_P.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/기업고객/HANA_E_WordCloud_N.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/기업고객/HANA_E_WordCloud_N.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/기업고객/HANA_E_WordCloud_P.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/기업고객/HANA_E_WordCloud_P.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/기업고객/IBK_E_WordCloud_N.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/기업고객/IBK_E_WordCloud_N.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/기업고객/IBK_E_WordCloud_P.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/기업고객/IBK_E_WordCloud_P.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/기업고객/KB_E_WordCloud_N.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/기업고객/KB_E_WordCloud_N.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/기업고객/KB_E_WordCloud_P.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/기업고객/KB_E_WordCloud_P.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/기업고객/NH_E_WordCloud_N.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/기업고객/NH_E_WordCloud_N.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/기업고객/NH_E_WordCloud_P.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/기업고객/NH_E_WordCloud_P.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/기업고객/SHINHAN_E_WordCloud_N.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/기업고객/SHINHAN_E_WordCloud_N.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/기업고객/SHINHAN_E_WordCloud_P.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/기업고객/SHINHAN_E_WordCloud_P.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/기업고객/WOORI_E_WordCloud_N.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/기업고객/WOORI_E_WordCloud_N.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/기업고객/WOORI_E_WordCloud_P.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/기업고객/WOORI_E_WordCloud_P.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/인터넷뱅크/KAKAO_WordCloud_N.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/인터넷뱅크/KAKAO_WordCloud_N.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/인터넷뱅크/KAKAO_WordCloud_P.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/인터넷뱅크/KAKAO_WordCloud_P.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/인터넷뱅크/KBank_WordCloud_N.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/인터넷뱅크/KBank_WordCloud_N.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/인터넷뱅크/KBank_WordCloud_P.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/인터넷뱅크/KBank_WordCloud_P.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/인터넷뱅크/TOSS_WordCloud_N.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/인터넷뱅크/TOSS_WordCloud_N.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordcloud/인터넷뱅크/TOSS_WordCloud_P.png" beforeDir="false" afterPath="$PROJECT_DIR$/wordcloud/인터넷뱅크/TOSS_WordCloud_P.png" afterDir="false" />
-    </list>
+    <list default="true" id="71cff64c-3815-43ee-806c-c19e4ee1702f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,16 +36,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Cyber/PycharmProjects/BARA/WordCloud.py",
-    "settings.editor.selected.configurable": "configurable.group.tools"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Cyber/PycharmProjects/BARA/WordCloud.py&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.tools&quot;
   }
-}]]></component>
+}</component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings module-name="BARA" is-module-sdk="true">
@@ -192,7 +158,7 @@
     <SUITE FILE_PATH="coverage/BARA$TopicModeling.coverage" NAME="TopicModeling Coverage Results" MODIFIED="1660747347120" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BARA$service.coverage" NAME="service Coverage Results" MODIFIED="1659502699240" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/AppData/Local/Programs/Python/Python39/Lib/site-packages/selenium/webdriver/common" />
     <SUITE FILE_PATH="coverage/BARA$ShinhanBank.coverage" NAME="ShinhanBank Coverage Results" MODIFIED="1659504264734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/BARA$IndividualCrawling.coverage" NAME="IndividualCrawling Coverage Results" MODIFIED="1660538281877" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BARA$IndividualCrawling.coverage" NAME="IndividualCrawling Coverage Results" MODIFIED="1660803188116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BARA$WordCloud.coverage" NAME="WordCloud Coverage Results" MODIFIED="1660749542445" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BARA$crawling.coverage" NAME="crawling Coverage Results" MODIFIED="1660448290811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BARA$test.coverage" NAME="test Coverage Results" MODIFIED="1659504041788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

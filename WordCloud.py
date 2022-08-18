@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from collections import Counter
 import pandas as pd
 import re
-from hanspell import spell_checker
+# from hanspell import spell_checker
 from konlpy.tag import Okt
 
 okt = Okt()
