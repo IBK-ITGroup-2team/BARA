@@ -486,8 +486,8 @@ def main():
     # 임시 변수 !!!!!!!!!!!!!!!!!!!!!! 나중에 지우기
     #bestWord = 'UI 개선'
     resultPersonal = document.add_paragraph('타행 중 best 은행: ' +bestBankI+ '\n')
-    resultPersonal.add_run('결 론           ').bold = True
-    resultPersonal.add_run(bestWordI + '에 힘쓰는 것이 좋겠다고 판단됨.')
+    resultPersonal.add_run('').bold = True
+    resultPersonal.add_run('사용자가 가장 긍정적으로 고려한 부분은 '+bestWordI + ' 입니다.')
 
     for i in range(13):
         document.add_paragraph('')
@@ -748,8 +748,8 @@ def main():
     WOORITableCells3E[1].paragraphs[0].add_run('3. '+WordCloud.WOORI_E_negative_top3[2]+'\n')
 
     resultEnterprise = document.add_paragraph('타행 중 best 은행: ' +bestBankI+ '\n')
-    resultEnterprise.add_run('결 론           ').bold = True
-    resultEnterprise.add_run(bestWordE + '에 힘쓰는 것이 좋겠다고 판단됨.')
+    resultEnterprise.add_run('').bold = True
+    resultEnterprise.add_run('사용자가 가장 긍정적으로 고려한 부분은 '+bestWordE+' 입니다.')
 
     # 인터넷 전문 은행 앱 리뷰 현황
 
@@ -883,8 +883,8 @@ def main():
     document.add_paragraph('')
     
     resultInternet = document.add_paragraph('인터넷 전문 은행 중 best 은행: '+bestBankInternet+'\n')
-    resultInternet.add_run('결 론           ').bold = True
-    resultInternet.add_run(bestWordInternet + '에 힘쓰는 것이 좋겠다고 판단됨.')
+    resultInternet.add_run('').bold = True
+    resultInternet.add_run('사용자가 가장 긍정적으로 고려한 부분은 '+bestWordInternet + ' 입니다.')
 
     # 마지막 꼬릿말
     #document.add_paragraph('\"새로운 60년, 고객을 향한 혁신\"')
