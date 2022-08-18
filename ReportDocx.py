@@ -207,53 +207,32 @@ def main():
     banks = ['하나', '우리', '신한', '국민', '농협']
     internetBanks = ['카카오뱅크', '케이뱅크', '토스']
 
-    document.add_heading('\"고객과 함께, 신뢰와 책임, 열정과 혁신, 소통과 팀웍\"', level=1)
+    # 맨 윗 줄
+    document.add_picture('sender.PNG',width=Cm(18),height=Cm(1))
+    
+    # 제목
+    #title=document.add_paragraph('')
+    document.add_picture("title.PNG", width=Cm(16), height=Cm(2))
+    
     document.add_paragraph('')
     dateToday = datetime.today()
     document.add_paragraph(datetime.today().strftime("%Y. %m. %d"))  # 해당 날짜
-
-    send = document.add_paragraph('')
-    send.add_run('수 신             ').bold = True
-    send.add_run('모바일 앱 개발 이해 관련 부서').bold = True
-
-    title = document.add_paragraph('')
-    title.add_run('제 목           『' + datetime.today().strftime("%Y년 %m월") + 'IBK 모바일 앱 사용자 반응 비교』').bold = True
+    
+    
 
     document.add_paragraph('')
     document.add_paragraph('')
 
     objective = document.add_paragraph('')
-    objective.add_run('□ 발간 목적').bold = True
-    # objective.add_run('당행의 모바일 앱에 대한 사용자들의 반응을 이해관계자에 효과적으로 전달하고, 타행과의 비교를 통해 개선점을 찾고자 함').bold=True
-    document.add_paragraph('당행의 모바일 앱에 대한 사용자들의 반응을 이해관계자에 효과적으로 전달하고, 타행과의 비교를 통해 개선점을 찾고자 함')
-
-    document.add_paragraph('')
-
-    index = document.add_paragraph('')
-    index.add_run('□ 주요 내용 목차').bold = True
-
-    document.add_paragraph(' 1. 당행 개인고객용 모바일 앱 (i-one bank) 사용자 반응 분석')
-    document.add_paragraph(' 2. 타행 개인고객용 모바일 앱 사용자 반응 비교 분석')
-    document.add_paragraph(' 3. 당행 기업고객용 모바일 앱 (i-one bank) 사용자 반응 분석')
-    document.add_paragraph(' 4. 타행 기업고객용 모바일 앱 사용자 반응 비교 분석')
-    document.add_paragraph(' 5. 인터넷 전문 은행 모바일 앱 사용자 반응 비교 분석')
-    document.add_paragraph('')
-
-    for i in range(7):
-        document.add_paragraph('')  # 다음 장으로 이동
-
-    main = document.add_paragraph('')
-    main.add_run('□ 주요 내용').bold = True
-
-    # 1번 당행 개인 앱 리뷰 현황
-    document.add_paragraph(' 1. 당행 개인고객용 모바일 앱 (i-one bank) 사용자 반응 분석')
+    objective.add_run('□ 당행과 타행의 개인고객용 모바일 앱 사용자 반응 분석').bold = True
+    document.add_paragraph('    ○ 당행 개인고객용 모바일 앱 (i-one bank) 사용자 반응 분석')
 
     # 표 생성
     grid_t_style = document.styles["Table Grid"]
     IBKTable = document.add_table(3, 2, grid_t_style)
 
     IBKTableCells1 = IBKTable.rows[0].cells
-    IBKTableCells1[0].paragraphs[0].add_run('긍정적 반응').bold = True
+    IBKTableCells1[0].paragraphs[0].add_run('긍정적 반응')
     IBKTableCells1[0].paragraphs[0].alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
     # IBKTableCells1[0].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
 
@@ -286,11 +265,12 @@ def main():
     IBKTableCells3[1].paragraphs[0].add_run('2. '+WordCloud.IBK_negative_top3[1]+'\n')
     IBKTableCells3[1].paragraphs[0].add_run('3. '+WordCloud.IBK_negative_top3[2]+'\n')
 
-    document.add_paragraph('')
+    for i in range(6):
+        document.add_paragraph('')
 
     #  하나은행 개인 앱 리뷰 현황
-    document.add_paragraph(' 2. 타행 개인고객용 모바일 앱 사용자 반응 분석')
-    document.add_paragraph('    ㅇ 하나은행')
+    document.add_paragraph('    ○ 타행 개인고객용 모바일 앱 사용자 반응 분석').bold = True
+    document.add_paragraph('        - 하나은행')
 
     # 하나은행 표 생성
     HANA1Table = document.add_table(3, 2, grid_t_style)
@@ -333,7 +313,7 @@ def main():
     document.add_paragraph('')
 
     # 국민은행 앱 리뷰 현황
-    document.add_paragraph('    ㅇ 국민은행')
+    document.add_paragraph('        - 국민은행')
 
     # 국민은행 표 생성
     KB1Table = document.add_table(3, 2, grid_t_style)
@@ -376,7 +356,7 @@ def main():
     document.add_paragraph('')
 
     # 신한은행 앱 리뷰 현황
-    document.add_paragraph('    ㅇ 신한은행')
+    document.add_paragraph('        - 신한은행')
 
     # 신한은행 표 생성
     SH1Table = document.add_table(3, 2, grid_t_style)
@@ -415,11 +395,11 @@ def main():
     SHTableCells3[1].paragraphs[0].add_run('2. '+WordCloud.SHINHAN_negative_top3[1]+'\n')
     SHTableCells3[1].paragraphs[0].add_run('3. '+WordCloud.SHINHAN_negative_top3[2]+'\n')
 
-    for i in range(3):
+    for i in range(2):
         document.add_paragraph('')
 
     # 농협 은행 개인 앱 리뷰 현황
-    document.add_paragraph('    ㅇ 농협은행')
+    document.add_paragraph('        - 농협은행')
 
     # 농협은행 표 생성
     NH1Table = document.add_table(3, 2, grid_t_style)
@@ -462,7 +442,7 @@ def main():
     document.add_paragraph('')
 
     # 우리은행 개인 앱 리뷰 현황
-    document.add_paragraph('    ㅇ 우리은행')
+    document.add_paragraph('        - 우리은행')
 
     # 우리은행 표 생성
     WOORI1Table = document.add_table(3, 2, grid_t_style)
@@ -509,9 +489,12 @@ def main():
     resultPersonal.add_run('결 론           ').bold = True
     resultPersonal.add_run(bestWordI + '에 힘쓰는 것이 좋겠다고 판단됨.')
 
-    # 당행 기업 앱 리뷰 현황
-    document.add_paragraph(' 3. 당행 기업고객용 모바일 앱 (i-one bank) 사용자 반응 분석')
+    for i in range(13):
+        document.add_paragraph('')
 
+    # 당행 기업 앱 리뷰 현황
+    document.add_paragraph('□ 당행과 타행의 기업고객용 모바일 앱 반응 비교')
+    document.add_paragraph('    ○ 당행 기업고객용 모바일 앱 (i-one bank) 사용자 반응 분석')
     IBKTableE = document.add_table(3, 2, grid_t_style)
 
     IBKTableECells1 = IBKTableE.rows[0].cells
@@ -551,9 +534,9 @@ def main():
     document.add_paragraph('')
 
     # 타행 기업 앱 리뷰 현황
-    document.add_paragraph(' 4. 타행 기업고객용 모바일 앱 사용자 반응 분석')
+    document.add_paragraph(' ○ 타행 기업고객용 모바일 앱 사용자 반응 분석')
 
-    document.add_paragraph('    ㅇ 하나은행')
+    document.add_paragraph('        - 하나은행')
 
     # 하나은행 표 생성
     HANA1TableE = document.add_table(3, 2, grid_t_style)
@@ -596,7 +579,7 @@ def main():
     document.add_paragraph('')
     document.add_paragraph('')
 
-    document.add_paragraph('    ㅇ 국민은행')
+    document.add_paragraph('        - 국민은행')
 
     # 국민은행 표 생성
     KB1TableE = document.add_table(3, 2, grid_t_style)
@@ -639,7 +622,7 @@ def main():
     document.add_paragraph('')
 
     # 신한 은행 기업 앱 리뷰 현황
-    document.add_paragraph('    ㅇ 신한은행')
+    document.add_paragraph('        - 신한은행')
 
     # 신한은행 표 생성
     SH1TableE = document.add_table(3, 2, grid_t_style)
@@ -683,7 +666,7 @@ def main():
     document.add_paragraph('')
 
     # 농협 은행 기업 고객 용 앱 리뷰 현황
-    document.add_paragraph('    ㅇ 농협은행')
+    document.add_paragraph('        - 농협은행')
 
     # 농협은행 표 생성
     NH1TableE = document.add_table(3, 2, grid_t_style)
@@ -726,7 +709,7 @@ def main():
     document.add_paragraph('')
 
     # 우리 은행 기업 고객용 앱 현황
-    document.add_paragraph('    ㅇ 우리은행')
+    document.add_paragraph('        - 우리은행')
 
     # 우리은행 표 생성
     WOORI1TableE = document.add_table(3, 2, grid_t_style)
@@ -774,10 +757,12 @@ def main():
 
     # 인터넷 전문 은행 앱 리뷰 현황
 
-    document.add_paragraph(' 5. 인터넷 전문 은행 모바일 앱 사용자 반응 분석')
-    document.add_paragraph('    ㅇ 토스')
+    document.add_paragraph('□ 인터넷 전문 은행과의 모바일 앱 사용자 반응 비교')
+    document.add_paragraph('    ○ 인터넷 전문 은행')
+    
 
     # 토스 표 생성
+    document.add_paragraph('        - 토스')
     TOSS1TableE = document.add_table(3, 2, grid_t_style)
 
     TOSS1Cells1E = TOSS1TableE.rows[0].cells
@@ -817,7 +802,7 @@ def main():
     document.add_paragraph('')
     document.add_paragraph('')
 
-    document.add_paragraph('    ㅇ 카카오뱅크')
+    document.add_paragraph('        - 카카오뱅크')
 
     # 카뱅 표 생성
     KAKAO1TableE = document.add_table(3, 2, grid_t_style)
@@ -860,7 +845,7 @@ def main():
     document.add_paragraph('')
 
     # Kbank
-    document.add_paragraph('    ㅇ 케이뱅크')
+    document.add_paragraph('        - 케이뱅크')
 
     # Kbank 표 생성
     Kbank1TableE = document.add_table(3, 2, grid_t_style)
@@ -914,7 +899,7 @@ def main():
     paragraph1.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
     # paragraph1.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
-    paragraph2 = document.paragraphs[2]
+    paragraph2 = document.paragraphs[3]
     paragraph2.alignment = WD_PARAGRAPH_ALIGNMENT.RIGHT
     # paragraph2.alignment = WD_ALIGN_PARAGRAPH.RIGHT
 
