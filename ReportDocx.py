@@ -34,6 +34,7 @@ def main():
     
     # 개인 고객용 어플
     starListIndividual=[]
+    bestBankI=''
     
     # 하나 은행
     fHANA=open('./reviews/별점/HANAreview_rating.csv','r',encoding='utf-8')
@@ -75,14 +76,127 @@ def main():
     indexI=starListIndividual.index(bestScoreI)
     if indexI == 2:
         bestWordI=WordCloud.HANA_positive_top3[0]
+        bestBankI='하나은행'
+        
     elif indexI == 4:
         bestWordI=WordCloud.KB_positive_top3[0]
+        bestBankI='국민은행'
+        
     elif indexI == 6:
         bestWordI=WordCloud.WOORI_positive_top3[0]
+        bestBankI='우리은행'
+        
     elif indexI ==8:
         bestWordI=WordCloud.NH_positive_top3[0]
+        bestBankI='농협은행'
+        
     else:
         bestWordI=WordCloud.SHINHAN_positive_top3[0]
+        bestBankI='신한은행'
+        
+        
+    #기업용 고객 어플 베스트 선정
+    starListEnterprise=[]
+    bestBankE=''
+    
+    # 하나 은행
+    fHANAE=open('./reviews/별점/HANA_enterprise_review_rating.csv','r',encoding='utf-8')
+    rdrHANAE=csv.reader(fHANAE)
+    for line in rdrHANAE:
+        starListEnterprise.append(line[1])
+    fHANAE.close()
+
+    # KB
+    fKBE=open('./reviews/별점/KBreview_rating(KB스타기업뱅킹).csv','r',encoding='utf-8')
+    rdrKBE=csv.reader(fKBE)
+    for line in rdrKBE:
+        starListEnterprise.append(line[1])
+    fKB.close()     
+    
+    # WOORI
+    fWOORIE=open('./reviews/별점/WOORIbank_enterprise_review_rating.csv','r',encoding='utf-8')
+    rdrWOORIE=csv.reader(fWOORIE)
+    for line in rdrWOORIE:
+        starListEnterprise.append(line[1])
+    fWOORIE.close()  
+    
+    # NH
+    fNHE=open('./reviews/별점/NHreview_rating(NH기업뱅킹).csv','r',encoding='utf-8')
+    rdrNHE=csv.reader(fNHE)
+    for line in rdrNHE:
+        starListEnterprise.append(line[1])
+    fNHE.close() 
+    
+    # SHINHAN
+    fSHE=open('./reviews/별점/SHINHANbank_enterprise_review_rating.csv','r',encoding='utf-8')
+    rdrSHE=csv.reader(fSHE)
+    for line in rdrSHE:
+        starListEnterprise.append(line[1])
+    fSHE.close()
+    
+    bestScoreE=max(starListEnterprise)
+    
+    indexE=starListEnterprise.index(bestScoreE)
+    if indexE == 2:
+        bestWordE=WordCloud.HANA_E_positive_top3[0]
+        bestBankE='하나은행'
+        
+    elif indexE == 4:
+        bestWordE=WordCloud.KB_E_positive_top3[0]
+        bestBankE='국민은행'
+        
+    elif indexE == 6:
+        bestWordE=WordCloud.WOORI_E_positive_top3[0]
+        bestBankE='우리은행'
+        
+    elif indexE ==8:
+        bestWordE=WordCloud.NH_E_positive_top3[0]
+        bestBankE='농협은행'
+        
+    else:
+        bestWordE=WordCloud.SHINHAN_E_positive_top3[0]
+        bestBankE='신한은행'
+        
+    # 인터넷 전문 은행 베스트 선정
+    starListInternet=[]
+    bestBankInternet=''
+    
+     # TOSS
+    fTOSS=open('./reviews/별점/TOSS_review_rating.csv','r',encoding='utf-8')
+    rdrTOSS=csv.reader(fTOSS)
+    for line in rdrTOSS:
+        starListInternet.append(line[1])
+    fTOSS.close()  
+    
+    # KAKAO
+    fKAKAO=open('./reviews/별점/KAKAO_review_rating.csv','r',encoding='utf-8')
+    rdrKAKAO=csv.reader(fKAKAO)
+    for line in rdrKAKAO:
+        starListInternet.append(line[1])
+    fKAKAO.close() 
+    
+    # Kbank
+    fKbank=open('./reviews/별점/KBank_review_rating.csv','r',encoding='utf-8')
+    rdrKbank=csv.reader(fKbank)
+    for line in rdrKbank:
+        starListInternet.append(line[1])
+    fKbank.close()
+    
+    bestScoreInternet=max(starListInternet)
+    
+    indexInternet=starListInternet.index(bestScoreInternet)
+    if indexInternet == 2:
+        bestWordInternet=WordCloud.TOSS_positive_top3[0]
+        bestBankInternet='토스'
+        
+    elif indexInternet == 4:
+        bestWordInternet=WordCloud.KAKAO_positive_top3[0]
+        bestBankInternet='카카오뱅크'
+        
+    else:
+        bestWordInternet=WordCloud.KBank_positive_top3[0]
+        bestBankInternet='케이뱅크'
+
         
     document = Document()
     # 스타일 적용
@@ -391,7 +505,7 @@ def main():
 
     # 임시 변수 !!!!!!!!!!!!!!!!!!!!!! 나중에 지우기
     #bestWord = 'UI 개선'
-    resultPersonal = document.add_paragraph('best 은행: ' + '\n')
+    resultPersonal = document.add_paragraph('best 은행: ' +bestBankI+ '\n')
     resultPersonal.add_run('결 론           ').bold = True
     resultPersonal.add_run(bestWordI + '에 힘쓰는 것이 좋겠다고 판단됨.')
 
@@ -654,11 +768,9 @@ def main():
     document.add_paragraph('')
     document.add_paragraph('')
 
-    # 임시 변수 !!!!!!!!!!!!!!!!!!!!!! 나중에 지우기
-    bestWord2 = '기업 이미지 개선'
-    resultEnterprise = document.add_paragraph('')
+    resultEnterprise = document.add_paragraph('best 은행: ' +bestBankI+ '\n')
     resultEnterprise.add_run('결 론           ').bold = True
-    resultEnterprise.add_run(bestWord2 + '에 힘쓰는 것이 좋겠다고 판단됨.')
+    resultEnterprise.add_run(bestWordE + '에 힘쓰는 것이 좋겠다고 판단됨.')
 
     # 인터넷 전문 은행 앱 리뷰 현황
 
@@ -789,10 +901,8 @@ def main():
 
     document.add_paragraph('')
     document.add_paragraph('')
-
-    # 임시 변수!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    bestWordInternet = '부가 서비스'
-    resultInternet = document.add_paragraph('')
+    
+    resultInternet = document.add_paragraph('best 은행: '+bestBankInternet+'\n')
     resultInternet.add_run('결 론           ').bold = True
     resultInternet.add_run(bestWordInternet + '에 힘쓰는 것이 좋겠다고 판단됨.')
 
