@@ -237,7 +237,7 @@ def main():
     # IBKTableCells1[0].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
 
     IBKTableCells1 = IBKTable.rows[0].cells
-    IBKTableCells1[1].paragraphs[0].add_run('부정적 반응').bold = True
+    IBKTableCells1[1].paragraphs[0].add_run('부정적 반응')
     IBKTableCells1[1].paragraphs[0].alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
     # IBKTableCells1[1].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
 
@@ -395,7 +395,7 @@ def main():
     SHTableCells3[1].paragraphs[0].add_run('2. '+WordCloud.SHINHAN_negative_top3[1]+'\n')
     SHTableCells3[1].paragraphs[0].add_run('3. '+WordCloud.SHINHAN_negative_top3[2]+'\n')
 
-    for i in range(2):
+    for i in range(3):
         document.add_paragraph('')
 
     # 농협 은행 개인 앱 리뷰 현황
@@ -502,7 +502,7 @@ def main():
     IBKTableECells1[0].paragraphs[0].alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
     # IBKTableECells1[0].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
 
-    IBKTableECells1 = IBKTable.rows[0].cells
+    IBKTableECells1 = IBKTableE.rows[0].cells
     IBKTableECells1[1].paragraphs[0].add_run('부정적 반응').bold = True
     IBKTableECells1[1].paragraphs[0].alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
     # IBKTableECells1[1].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -575,7 +575,6 @@ def main():
     HANATableCells3E[1].paragraphs[0].add_run('2. '+WordCloud.HANA_E_negative_top3[1]+'\n')
     HANATableCells3E[1].paragraphs[0].add_run('3. '+WordCloud.HANA_E_negative_top3[2]+'\n')
 
-    document.add_paragraph('')
     document.add_paragraph('')
     document.add_paragraph('')
 
@@ -748,9 +747,6 @@ def main():
     WOORITableCells3E[1].paragraphs[0].add_run('2. '+WordCloud.WOORI_E_negative_top3[1]+'\n')
     WOORITableCells3E[1].paragraphs[0].add_run('3. '+WordCloud.WOORI_E_negative_top3[2]+'\n')
 
-    document.add_paragraph('')
-    document.add_paragraph('')
-
     resultEnterprise = document.add_paragraph('best 은행: ' +bestBankI+ '\n')
     resultEnterprise.add_run('결 론           ').bold = True
     resultEnterprise.add_run(bestWordE + '에 힘쓰는 것이 좋겠다고 판단됨.')
@@ -841,8 +837,7 @@ def main():
     KAKAOTableCells3E[1].paragraphs[0].add_run('2. '+WordCloud.KAKAO_negative_top3[1]+'\n')
     KAKAOTableCells3E[1].paragraphs[0].add_run('3. '+WordCloud.KAKAO_negative_top3[2]+'\n')
 
-    document.add_paragraph('')
-    document.add_paragraph('')
+  
 
     # Kbank
     document.add_paragraph('        - 케이뱅크')
@@ -892,7 +887,7 @@ def main():
     resultInternet.add_run(bestWordInternet + '에 힘쓰는 것이 좋겠다고 판단됨.')
 
     # 마지막 꼬릿말
-    document.add_paragraph('\"새로운 60년, 고객을 향한 혁신\"')
+    #document.add_paragraph('\"새로운 60년, 고객을 향한 혁신\"')
 
     # 문단별 정렬
     paragraph1 = document.paragraphs[0]  # 첫번째 문단
@@ -905,7 +900,7 @@ def main():
 
     paragraphLast = document.paragraphs[-1]
     # paragraphLast.font.size=Document.shared.Pt(20)
-    paragraphLast.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER  # 마지막 문단
+    #paragraphLast.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER  # 마지막 문단
     # paragraphLast.alignment = WD_ALIGN_PARAGRAPH.CENTER  # 마지막 문단
 
     # 파일 저장 // 마지막 단계
