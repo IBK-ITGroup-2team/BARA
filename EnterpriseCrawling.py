@@ -27,8 +27,8 @@ total_rating = ['./reviews/별점/IBKreview_rating(iONEBank기업).csv', './revi
 
 #기업앱 리뷰 크롤링
 def main():
-    # 모든 은행 크롤링하기 위한 반복문 (신한 제외)
-    for i in range(0, 5):
+    # 모든 은행 크롤링하기 위한 반복문
+    for i in range(0, 6):
         chrome_driver = "chromedriver.exe"
         URL = url[i]
         CSV = csv[i]
