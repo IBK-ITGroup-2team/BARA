@@ -485,7 +485,7 @@ def main():
 
     # 임시 변수 !!!!!!!!!!!!!!!!!!!!!! 나중에 지우기
     #bestWord = 'UI 개선'
-    resultPersonal = document.add_paragraph('best 은행: ' +bestBankI+ '\n')
+    resultPersonal = document.add_paragraph('타행 중 best 은행: ' +bestBankI+ '\n')
     resultPersonal.add_run('결 론           ').bold = True
     resultPersonal.add_run(bestWordI + '에 힘쓰는 것이 좋겠다고 판단됨.')
 
@@ -747,7 +747,7 @@ def main():
     WOORITableCells3E[1].paragraphs[0].add_run('2. '+WordCloud.WOORI_E_negative_top3[1]+'\n')
     WOORITableCells3E[1].paragraphs[0].add_run('3. '+WordCloud.WOORI_E_negative_top3[2]+'\n')
 
-    resultEnterprise = document.add_paragraph('best 은행: ' +bestBankI+ '\n')
+    resultEnterprise = document.add_paragraph('타행 중 best 은행: ' +bestBankI+ '\n')
     resultEnterprise.add_run('결 론           ').bold = True
     resultEnterprise.add_run(bestWordE + '에 힘쓰는 것이 좋겠다고 판단됨.')
 
@@ -882,7 +882,7 @@ def main():
     document.add_paragraph('')
     document.add_paragraph('')
     
-    resultInternet = document.add_paragraph('best 은행: '+bestBankInternet+'\n')
+    resultInternet = document.add_paragraph('인터넷 전문 은행 중 best 은행: '+bestBankInternet+'\n')
     resultInternet.add_run('결 론           ').bold = True
     resultInternet.add_run(bestWordInternet + '에 힘쓰는 것이 좋겠다고 판단됨.')
 
