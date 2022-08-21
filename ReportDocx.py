@@ -747,7 +747,7 @@ def main():
     WOORITableCells3E[1].paragraphs[0].add_run('2. '+WordCloud.WOORI_E_negative_top3[1]+'\n')
     WOORITableCells3E[1].paragraphs[0].add_run('3. '+WordCloud.WOORI_E_negative_top3[2]+'\n')
 
-    resultEnterprise = document.add_paragraph('타행 중 best 은행: ' +bestBankI+ '\n')
+    resultEnterprise = document.add_paragraph('타행 중 best 은행: ' +bestBankE+ '\n')
     resultEnterprise.add_run('').bold = True
     resultEnterprise.add_run('사용자가 가장 긍정적으로 고려한 부분은 '+bestWordE+' 입니다.')
 
@@ -931,4 +931,3 @@ def main():
     s.sendmail("IBK.ITgroup.2@gmail.com", "bethh05108@gmail.com", msg.as_string())
     # 세션 종료
     s.quit()
-
