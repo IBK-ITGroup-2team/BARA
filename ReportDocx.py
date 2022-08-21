@@ -208,7 +208,7 @@ def main():
     internetBanks = ['카카오뱅크', '케이뱅크', '토스']
 
     # 맨 윗 줄
-    document.add_picture('sender.PNG',width=Cm(18),height=Cm(1))
+    document.add_picture('sender.PNG',width=Cm(16),height=Cm(1))
     
     # 제목
     #title=document.add_paragraph('')
@@ -931,3 +931,4 @@ def main():
     s.sendmail("IBK.ITgroup.2@gmail.com", "bethh05108@gmail.com", msg.as_string())
     # 세션 종료
     s.quit()
+
