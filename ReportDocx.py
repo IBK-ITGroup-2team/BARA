@@ -75,8 +75,8 @@ def main():
     
     indexI=starListIndividual.index(bestScoreI)
     if indexI == 2:
-        bestWordI=WordCloud.HANA_positive_top3[0]
-        bestBankI='하나은행'
+        bestWordI=WordCloud.SHINHAN_positive_top3[0]
+        bestBankI='신한은행'
         
     elif indexI == 4:
         bestWordI=WordCloud.KB_positive_top3[0]
@@ -91,8 +91,8 @@ def main():
         bestBankI='농협은행'
         
     else:
-        bestWordI=WordCloud.SHINHAN_positive_top3[0]
-        bestBankI='신한은행'
+        bestWordI=WordCloud.HANA_positive_top3[0]
+        bestBankI='하나은행'
         
         
     #기업용 고객 어플 베스트 선정
@@ -146,16 +146,16 @@ def main():
         bestBankE='국민은행'
         
     elif indexE == 6:
-        bestWordE=WordCloud.WOORI_E_positive_top3[0]
-        bestBankE='우리은행'
+        bestWordE=WordCloud.SHINHAN_E_positive_top3[0]
+        bestBankE='신한은행'
         
     elif indexE ==8:
         bestWordE=WordCloud.NH_E_positive_top3[0]
         bestBankE='농협은행'
         
     else:
-        bestWordE=WordCloud.SHINHAN_E_positive_top3[0]
-        bestBankE='신한은행'
+        bestWordE=WordCloud.WOORI_E_positive_top3[0]
+        bestBankE='우리은행'
         
     # 인터넷 전문 은행 베스트 선정
     starListInternet=[]
@@ -190,12 +190,12 @@ def main():
         bestBankInternet='토스'
         
     elif indexInternet == 4:
-        bestWordInternet=WordCloud.KAKAO_positive_top3[0]
-        bestBankInternet='카카오뱅크'
-        
-    else:
         bestWordInternet=WordCloud.KBank_positive_top3[0]
         bestBankInternet='케이뱅크'
+        
+    else:
+        bestWordInternet=WordCloud.KAKAO_positive_top3[0]
+        bestBankInternet='카카오뱅크'
 
         
     document = Document()
@@ -208,7 +208,7 @@ def main():
     internetBanks = ['카카오뱅크', '케이뱅크', '토스']
 
     # 맨 윗 줄
-    document.add_picture('sender.PNG',width=Cm(16),height=Cm(1))
+    document.add_picture('sender.PNG',width=Cm(18),height=Cm(1))
     
     # 제목
     #title=document.add_paragraph('')
@@ -931,4 +931,3 @@ def main():
     s.sendmail("IBK.ITgroup.2@gmail.com", "bethh05108@gmail.com", msg.as_string())
     # 세션 종료
     s.quit()
-
